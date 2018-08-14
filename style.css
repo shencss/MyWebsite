@@ -1,0 +1,90 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*** HEADER **/
+.header {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(34,125,170);
+    color: #FFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, .2);
+    line-height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav .title {
+    float: left;
+    margin-left: 200px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.nav .nav-list {
+    display: flex;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    text-align: center;
+}
+.nav .nav-list li {
+    position: relative;
+    flex: 1 1 auto;
+    list-style: none;
+    float: left;
+    cursor: pointer;
+}
+.nav .nav-list li::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 3px solid #FFF;
+    transition: all .2s .1s linear;
+}
+.nav .nav-list li:hover::after {
+    left: 0;
+    width: 100%;
+}
+.nav .nav-list li:hover ~ li::after {
+    left: 0;
+}
+.introduction {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+}
+.introduction .job {
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    margin: 30px;
+}
+.introduction .job::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #FFF;
+}
+.introduction .description {
+    font-size: 16px;
+    margin: 30px;
+}
