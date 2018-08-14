@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+/*** 通用样式 ***/
+
+
 /*** HEADER **/
 .header {
     position: relative;
@@ -17,18 +20,35 @@
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(34,125,170);
+    background-color: rgb(34, 125, 170);
     color: #FFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, .2);
     line-height: 70px;
     font-size: 20px;
     font-weight: bold;
+    z-index: 2;
 }
 .nav .title {
     float: left;
     margin-left: 200px;
+    width: 120px;
     font-size: 25px;
     cursor: pointer;
+    position: relative;
+}
+.nav .title::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    height: 50px;
+    width: 140px;
+    border: 3px solid #FFF;
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+.nav .title:hover::after {
+    opacity: 1;
 }
 .nav .nav-list {
     display: flex;
@@ -87,4 +107,20 @@
 .introduction .description {
     font-size: 16px;
     margin: 30px;
+}
+
+/*** ABOUT ***/
+.about {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    
+}
+
+/*** EXPERIENCS ***/
+.experience{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
 }
