@@ -5,14 +5,43 @@
 }
 
 /*** 通用样式 ***/
-
+.icon {
+    float: left;
+    width: 20%;
+}
+.icon-text {
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.icon-text::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+}
+.icon-text::after:nth-of-type(even) {
+    background-color: #FFF;
+}
+.icon-img {
+    width: 50px;
+    height: 50px;
+}
+ul li {
+    list-style: none;
+}
 
 /*** HEADER **/
 .header {
     position: relative;
     width: 100%;
     height: 500px;
+    color: #FFF;
     background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+    padding: 100px;
 }
 .nav {
     position: fixed;
@@ -20,8 +49,8 @@
     left: 0;
     width: 100%;
     height: 70px;
+    padding: 0 60px;
     background-color: rgb(34, 125, 170);
-    color: #FFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, .2);
     line-height: 70px;
     font-size: 20px;
@@ -30,8 +59,8 @@
 }
 .nav .title {
     float: left;
-    margin-left: 200px;
     width: 120px;
+    margin-left: 140px;
     font-size: 25px;
     cursor: pointer;
     position: relative;
@@ -61,7 +90,6 @@
 .nav .nav-list li {
     position: relative;
     flex: 1 1 auto;
-    list-style: none;
     float: left;
     cursor: pointer;
 }
@@ -89,13 +117,13 @@
     transform: translateY(-50%);
     color: #FFF;
 }
-.introduction .job {
+.introduction .introduction-job {
     font-size: 50px;
     font-weight: bold;
     position: relative;
-    margin: 30px;
+    margin-bottom: 30px;
 }
-.introduction .job::after {
+.introduction .introduction-job::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -104,23 +132,74 @@
     height: 4px;
     background-color: #FFF;
 }
-.introduction .description {
+.introduction .introduction-description {
     font-size: 16px;
-    margin: 30px;
 }
 
 /*** ABOUT ***/
 .about {
     position: relative;
     width: 100%;
-    height: 500px;
-    
+    padding: 100px;
+    color: rgb(34, 125, 170);
+    overflow: hidden;
+}
+.about .icon-text::after {
+    background-color: rgb(34, 125, 170);
+}
+.information {
+    float: left;
+    width: 80%;
+    color: #58798c;
+}
+.information .information-name {
+    margin-bottom: 10px;
 }
 
 /*** EXPERIENCS ***/
 .experience{
     position: relative;
     width: 100%;
-    height: 500px;
+    padding: 100px;
+    color: #FFF;
     background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+    overflow: hidden;
+}
+
+.experience .icon-text::after {
+    background-color: #FFF;
+}
+.experience-list {
+    float: left;
+    width: 80%;
+}
+.experience-list li {
+    padding: 20px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    transition: background-color .2s ease-in-out;
+}
+.experience-list li:not(:last-child) {
+    margin-bottom: 50px;
+}
+.experience-list li:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+.experience-name a {
+    display: inline-block;
+    background: url(icons/link-icon.png) no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.experience-time {
+    margin: 10px 0;
+    color: #aac7d9;
+}
+.experience-introduction, .experience-job {
+    margin-top: 10px;
+    color: #aac7d9;
 }
