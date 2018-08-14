@@ -2,9 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    letter-spacing: 1px;
 }
 
 /*** 通用样式 ***/
+.block {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    overflow: hidden;
+}
+.main {
+    float: left;
+    width: 80%;
+}
 .icon {
     float: left;
     width: 20%;
@@ -13,7 +24,6 @@
     position: relative;
     margin-bottom: 20px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 .icon-text::after {
     content: '';
@@ -22,9 +32,6 @@
     left: 0;
     width: 50px;
     height: 4px;
-}
-.icon-text::after:nth-of-type(even) {
-    background-color: #FFF;
 }
 .icon-img {
     width: 50px;
@@ -138,19 +145,13 @@ ul li {
 
 /*** ABOUT ***/
 .about {
-    position: relative;
-    width: 100%;
-    padding: 100px;
     color: rgb(34, 125, 170);
-    overflow: hidden;
 }
 .about .icon-text::after {
     background-color: rgb(34, 125, 170);
 }
 .information {
-    float: left;
-    width: 80%;
-    color: #58798c;
+    color: #58798C;
 }
 .information .information-name {
     margin-bottom: 10px;
@@ -158,26 +159,17 @@ ul li {
 
 /*** EXPERIENCS ***/
 .experience{
-    position: relative;
-    width: 100%;
-    padding: 100px;
     color: #FFF;
     background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
-    overflow: hidden;
 }
 
 .experience .icon-text::after {
     background-color: #FFF;
 }
-.experience-list {
-    float: left;
-    width: 80%;
-}
 .experience-list li {
     padding: 20px;
     border: 1px solid #FFF;
     border-radius: 10px;
-    letter-spacing: 1px;
     transition: background-color .2s ease-in-out;
 }
 .experience-list li:not(:last-child) {
@@ -197,9 +189,65 @@ ul li {
 }
 .experience-time {
     margin: 10px 0;
-    color: #aac7d9;
+    color: #AAC7D9;
 }
 .experience-introduction, .experience-job {
     margin-top: 10px;
-    color: #aac7d9;
+    color: #DEEEF5;
+}
+
+/*** SKILLSET ***/
+.skillset {
+    color: rgb(34, 125, 170);
+}
+.skillset .icon-text::after {
+    background-color: rgb(34, 125, 170);
+}
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.skill-list li {
+    display: inline-block;
+    width: 50%;
+    height: 70px;
+}
+.skill-percentage {
+    margin-top: 5px;
+    position: relative;
+    height: 10px;
+    width: 85%;
+    background-color: #DEEEF5;
+}
+.skill-percentage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+}
+/***EDUCATION ***/
+.education {
+    color: #FFF;
+    background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+}
+.education .icon-text::after {
+    background-color: #FFF;
+}
+.education-time {
+    color: #AAC7D9;
+}
+.education-profession {
+    margin: 10px 0;
+}
+.education-school {
+    color: #DEEEF5;
+}
+.education-books {
+    margin-top: 10px;
+    color: #DEEEF5;
 }
