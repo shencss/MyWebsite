@@ -43,6 +43,15 @@ ul li {
 a {
     cursor: pointer;
 }
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 10;
+}
 
 /*** NAV ***/ 
 .nav {
@@ -320,6 +329,112 @@ a {
 .notes .icon-text::after {
     background-color: #FFF;
 }
-.note-list li {
+.note-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.note-list > li {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+}
+.note-description {
+    position: relative;
+    left: 17.5%;
+    width: 65%;
+    height: 300px;
+    padding: 30px 30px 30px 19%;
+    color: #FFF;
+    border-radius: 4px;
+    transition: all .5s linear;
+    perspective: 1000px;
+}
+.note-description img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 35%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    transform-style: preserve-3d;
+    transition: all .5s linear;
+}
+.note-description h3 + p {
+    color: #AAC7D9;
+    font-size: 10px;
+}
+.note-description p {
+    margin: 10px 0;
+}
+.note-description button {
+    position: absolute;
+    bottom: 30px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: #AAA;
+    color: #FFF;
+    cursor: pointer;
+    outline: none;
+    transition: all .5s linear;
+}
+.note-description:hover {
+    background-color: rgb(34,125,170);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.note-description:hover img {
+    transform: translate(-50%, -50%) rotateY(30deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.note-description:hover button {
+    color: rgb(34, 125, 170);
+    background-color: #FFF;
+}
+.note-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 45%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: rgb(34, 125, 170);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    z-index: 11;
+}
+.note-details .img-bg {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(23, 88, 168);
+    border-radius: 5px 0 0 5px;
+}
+.note-details img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30%;
+    transform: translate(10%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.note-content {
+    float: right;
+    width: 65%;
+    padding: 30px;
+    overflow: auto;
+}
+.note-content p {
+    margin: 10px 0;
+    color: #AAC7D9;
+}
+.note-content ol {
     
+}
+.note-content li {
+    margin: 10px 0;
+    list-style: decimal;
 }
