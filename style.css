@@ -473,29 +473,27 @@ a {
     color: #FFF;
     width: 100%;
     height: 500PX;
-    border-radius: 0 15px 15px 0;
-    transition: all .7s linear;
-    cursor: pointer;
+    border-radius: 15px;
+    transition: all 1s linear;
+    text-align: center;
 }
 .collection-list > li::after {
     content: '';
     position: absolute;
     top: 0;
-    right: -40px;
+    right: -38px;
     width: 40px;
     height: 25%;
     border-radius: 0 15px 15px 0;
     z-index: 1;
+    cursor: pointer;
 }
 .collection-list > li:hover ~ li {
-    width: 0    ;
-}
-.collection-list > li:hover ~ .collection-website::after {
-    
+    transform: translateX(-99.9%);
 }
 .collection-list .collection-website {
     background-color: rgb(34,125,170);
-    width: 83%;
+    width: 78%;
     border-top-right-radius: 0;
     z-index: 5;
 }
@@ -504,7 +502,7 @@ a {
 }
 .collection-list .collection-blog {
     background-color: rgb(81,172,205);
-    width: 87%;
+    width: 82%;
     z-index: 4;
 }
 .collection-list .collection-blog::after {
@@ -513,7 +511,7 @@ a {
 }
 .collection-list .collection-book {
     background-color: #AAC7D9;
-    width: 91%;
+    width: 86%;
     z-index: 3;
 }
 .collection-list .collection-book::after {
@@ -522,13 +520,60 @@ a {
 }
 .collection-list .collection-css {
     background-color: #EEE;
-    width: 95%;
+    width: 90%;
     border-bottom-right-radius: 0;
     z-index: 2;
 }
 .collection-list .collection-css::after {
     background-color: #EEE;
     top: 75%;   
+}
+.collection-list li .collection-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+.collection-content h2 {
+    margin-bottom: 10px;
+}
+.collection-content .collection-introduction {
+    color: #AAC7D9;
+    font-size: 10px;
+}
+.collection-content ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.collection-content ul li {
+    flex: 0 1 21%;
+    background-color: #FFF;
+    border-radius: 5px;
+    margin: 2%;
+    color: rgb(23, 88, 168);
+    padding: 10px;
+}
+.collection-content ul li a {
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+.collection-content ul li a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.collection-content ul li hr {
+    border: none;
+    height: 1px;
+    background-color: rgb(23, 88, 168);
+    margin: 5px 0;
 }
 
 /*** CONTACT ***/
