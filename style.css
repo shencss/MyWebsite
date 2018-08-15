@@ -423,7 +423,7 @@ a {
     left: 0;
     width: 30%;
     transform: translate(10%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
 }
 .note-content {
     float: right;
@@ -446,4 +446,10 @@ a {
 }
 .note-js .note-details .img-bg {
     background-color: rgb(247, 223, 29);
+}
+.note-jq .note-details .img-bg {
+    background-color: rgb(17, 105, 174);
+}
+.note-react .note-details .img-bg {
+    background-color: rgb(34, 34, 34);
 }
