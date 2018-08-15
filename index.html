@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="nav">
+        <h1 class="title">SHENCSS</h1>
+        <ul class="nav-list">
+            <li>ABOUT</li>
+            <li>EXPERIENCE</li>
+            <li>SKILLSET</li>
+            <li>EDUCATION</li>
+            <li>WORKS</li>
+            <li>NOTES</li>
+            <li>COLLETCIONS</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+
     <header class="header">
-        <div class="nav">
-            <h1 class="title">SHENCSS</h1>
-            <ul class="nav-list">
-                <li>ABOUT</li>
-                <li>EXPERIENCE</li>
-                <li>SKILLSET</li>
-                <li>EDUCATION</li>
-                <li>WORKS</li>
-                <li>NOTES</li>
-                <li>COLLETCIONS</li>
-                <li>CONTACT</li>
-            </ul>
-        </div>
         <div class="introduction">
             <h1 class="introduction-job">FRONT-END ENGINEER</h1>
             <p class="introduction-description">FE小菜鸡一只</p>
@@ -46,7 +47,7 @@
         </div>
         <ul class="main experience-list">
             <li>
-                <h2 class="experience-name">电器运维系统  前端开发<a href="https://github.com/shencss/ReactDemo/tree/master/report-react" target="_blank" title="visit on github"></a></h2>
+                <h2 class="experience-name">电器运维系统  前端开发<a href="https://github.com/shencss/ReactDemo/tree/master/report-react" target="_blank" title="visit on github"><img src="icons/link-icon.png" alt="link-icon"></a></h2>
                 <p class="experience-time">2018.06-2018.07</p>
                 <p class="experience-introduction">项目介绍：一个学院与广州飞元信息科技有限公司合作的实训项目，开发一个电器设备巡检维修的运维系统，为用户提供报修、保修功能，为维修工提供任务分配、配件领用、工钱结算等功能。</p>
                 <p class="experience-job">主要负责：开发用户方的报单工具，实现报修、取消报修、查询报单状态、获取设备维修历史及保修状况等功能。基于HTML+CSS+JQ实现项目UI设计及前端逻辑处理，并使用AJAX和后台交互以对数据库进行读写操作，最后审核上架该公司的WEB平台。个人基于LocalStorage用React+React-Redux重写实现了该项目。</p>
@@ -106,31 +107,147 @@
         </div>        
     </section>
 
-    <section class="works">
-        <div class="works-icon">
-            <span>WORKS</span>
+    <section class="block works">
+        <div class="icon works-icon">
+            <h1 class="icon-text">WORKS</h1>
+            <img class="icon-img" src="icons/work-icon.png" alt="about-icon">
         </div>
-        <ul>
+        <ul class="main work-list">
             <li>
-                <img src="" alt=""/>
-                <span class="work-name">B</span>
-                <ul>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/3DchangeImg/index.html" target="_blank"><img class="work-img" src="worksPic/3DchangeImg.png" alt="3DchangeImg"/></a>
+                <p class="work-name">3D图片切换轮播<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/3DCube/index.html" target="_blank"><img class="work-img" src="worksPic/3DCube.png" alt="3DCubeImg"/></a>
+                <p class="work-name">旋转的3D方块<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
                     <li>HTML</li>
                     <li>CSS</li>
                 </ul>
             </li>
             <li>
-                <img src="" alt=""/>
-                <span class="work-name">c</span>
-                <ul>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/3DPage/index.html" target="_blank"><img class="work-img" src="worksPic/3DPage.png" alt="3DPageImg"/></a>
+                <p class="work-name">3D翻页特效<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/BezierCurve/index.html" target="_blank"><img class="work-img" src="worksPic/BezierCurve.png" alt="BezierCurveImg"/></a>
+                <p class="work-name">贝塞尔曲线导航动画<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
                     <li>HTML</li>
                     <li>CSS</li>
                 </ul>
             </li>
             <li>
-                <img src="" alt=""/>
-                <span class="work-name">d</span>
-                <ul>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/BrowseHappy/index.html" target="_blank"><img class="work-img" src="worksPic/BrowseHappy.png" alt="BrowseHappyImg"/></a>
+                <p class="work-name">主流浏览器版本更新应用<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Calendar/index.html" target="_blank"><img class="work-img" src="worksPic/Calendar.png" alt="3DchangeImg"/></a>
+                <p class="work-name">自定义日历<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Camera/index.html" target="_blank"><img class="work-img" src="worksPic/Camera.png" alt="CameraImg"/></a>
+                <p class="work-name">拍立得相机<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/CanvasFilter/index.html" target="_blank"><img class="work-img" src="worksPic/CanvasFilter.png" alt="CanvasFilterImg"/></a>
+                <p class="work-name">Canvas滤镜效果<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/CanvasWave/index.html" target="_blank"><img class="work-img" src="worksPic/CanvasWave.png" alt="CanvasWaveImg"/></a>
+                <p class="work-name">Canvas动态波浪动画<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JQ</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/CSSShadow/index.html" target="_blank"><img class="work-img" src="worksPic/CSSShadow.png" alt="CSSShadowImg"/></a>
+                <p class="work-name">自定义照片阴影<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Jigsaw/index.html" target="_blank"><img class="work-img" src="worksPic/Jigsaw.png" alt="JigsawImg"/></a>
+                <p class="work-name">数字拼图小游戏<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Note/index.html" target="_blank"><img class="work-img" src="worksPic/Note.png" alt="NoteImg"/></a>
+                <p class="work-name">记事小便签<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Quote/index.html" target="_blank"><img class="work-img" src="worksPic/Quote.png" alt="QuoteImg"/></a>
+                <p class="work-name">短语名言展示应用<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JQ</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Send/index.html" target="_blank"><img class="work-img" src="worksPic/Send.png" alt="SendImg"/></a>
+                <p class="work-name">动态发送按钮特效<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/Todos/index.html" target="_blank"><img class="work-img" src="worksPic/Todos.png" alt="TodosImg"/></a>
+                <p class="work-name">待办清单应用<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JQ</li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://htmlpreview.github.io/?https://github.com/shencss/FrontEndDemo/blob/master/VerticalTimeline/index.html" target="_blank"><img class="work-img" src="worksPic/VerticalTimeline.png" alt="VerticalTimelineImg"/></a>
+                <p class="work-name">响应式垂直时间轴<a class="link-img" href="https://github.com/shencss/FrontEndDemo" target="_blank" title="code on github"><img src="icons/link-icon2.png" alt="link-icon"></a></p>
+                <ul class="work-technology-list">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JS</li>
@@ -139,16 +256,16 @@
         </ul>        
     </section>
 
-    <section class="notes">
-        <div class="notes-icon">
-            <span>NOTES</span>
+    <section class="block notes">
+        <div class="icon notes-icon">
+            <h1 class="icon-text">NOTES</h1>
+            <img class="icon-img" src="icons/note-icon.png" alt="about-icon">
         </div>
-        <ul>
-            <li>
-                <div>CSS</div>
+        <ul class="main note-list">
+            <li class="note-css">CSS
                 <ul>
-                    <li>1.HTML</li>
-                    <li>2.CSS</li>
+                    <li>1.BOX MODLE</li>
+                    <li>2.BFC</li>
                 </ul>
             </li>
             <li>
