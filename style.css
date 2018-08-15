@@ -51,6 +51,7 @@ a {
     width: 100%;
     background-color: rgba(0, 0, 0, .3);
     z-index: 10;
+    display: none;
 }
 
 /*** NAV ***/ 
@@ -339,6 +340,7 @@ a {
     position: relative;
     display: inline-block;
     width: 50%;
+    margin: 10px 0;
 }
 .note-description {
     position: relative;
@@ -350,6 +352,7 @@ a {
     border-radius: 4px;
     transition: all .5s linear;
     perspective: 1000px;
+    cursor: pointer;
 }
 .note-description img {
     position: absolute;
@@ -398,19 +401,20 @@ a {
     top: 50%;
     left: 50%;
     width: 45%;
-    height: 50%;
+    height: 65%;
     transform: translate(-50%, -50%);
     background-color: #FFF;
     color: rgb(34, 125, 170);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     border-radius: 5px;
     z-index: 11;
+    /*** 显示注释 ***/
+    display: none;
 }
 .note-details .img-bg {
     float: left;
     width: 30%;
     height: 100%;
-    background-color: rgb(23, 88, 168);
     border-radius: 5px 0 0 5px;
 }
 .note-details img {
@@ -424,17 +428,22 @@ a {
 .note-content {
     float: right;
     width: 65%;
+    height: 100%;
     padding: 30px;
-    overflow: auto;
+    overflow-y: scroll;
 }
 .note-content p {
     margin: 10px 0;
     color: #AAC7D9;
 }
-.note-content ol {
-    
-}
 .note-content li {
     margin: 10px 0;
+    color: #000;
     list-style: decimal;
+}
+.note-css .note-details .img-bg {
+    background-color: rgb(23, 88, 168);
+}
+.note-js .note-details .img-bg {
+    background-color: rgb(247, 223, 29);
 }
