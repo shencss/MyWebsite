@@ -41,6 +41,7 @@ ul li {
     list-style: none;
 }
 a {
+    text-decoration: none;
     cursor: pointer;
 }
 .cover {
@@ -613,8 +614,8 @@ a {
 /*** BOOK ***/
 .book {
 	position: relative;
-	width: 160px; 
-	height: 220px;
+	width: 120px; 
+	height: 165px;
 	perspective: 1000px;
 	transform-style: preserve-3d;
 }
@@ -645,7 +646,9 @@ a {
 	user-select: none;
     transform: translateZ(2px);
     background-color: #EEE;
-	backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: url(booksPic/telescope.jpg) no-repeat;
+    background-size: 100% 100%;
 }
 .hardcover-front li:last-child {
     transform: rotateY(180deg) translateZ(2px);
@@ -712,7 +715,23 @@ a {
 }
 .page > li:nth-child(4) {
 	transform: rotateY(-34deg);
-	transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.page > li:nth-child(2) a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 25px;
+    padding-top: 2px;
+    border: 2px solid;
+    color: #666;
+    font-size: 10px;
+    text-align: center;
+}
+.page > li:nth-child(2) a:hover {
+    color: rgb(17, 105, 174);
 }
 .page > li:nth-child(5) {
 	transform: rotateY(-36deg);
@@ -720,21 +739,13 @@ a {
 }
 .hardcover-front li:first-child::after,
 .hardcover-front li:first-child::before,
-.hardcover-front li:last-child::after,
-.hardcover-front li:last-child::before,
-.hardcover-back li:first-child::after,
-.hardcover-back li:first-child::before,
-.hardcover-back li:last-child::after,
-.hardcover-back li:last-child::before,
 .book-spine li:first-child::after,
-.book-spine li:first-child::before,
-.book-spine li:last-child::after,
-.book-spine li:last-child::before {
+.book-spine li:first-child::before {
     content: '';
     position: absolute;
 	top: 0;
 	left: 0;
-	background: #AAC7D9;
+	background: red;
 }
 .hardcover-front li:first-child::after,
 .hardcover-front li:first-child::before,
@@ -743,49 +754,11 @@ a {
 	width: 4px;
 	height: 100%;
 }
-.hardcover-front li:last-child::after,
-.hardcover-front li:last-child::before,
-.hardcover-back li:first-child::after,
-.hardcover-back li:first-child::before,
-.hardcover-back li:last-child::after,
-.hardcover-back li:last-child::before {
-	width: 4px;
-	height: 160px;
-}
-.book-spine li:last-child::after,
-.book-spine li:last-child::before {
-	width: 4px;
-	height: 16px;
-}
-.hardcover-front li:first-child::after,
-.hardcover-back li:first-child::after {
-	transform: rotateY(90deg) translateZ(-2px) translateX(2px);
-}
-.hardcover-front li:first-child::before,
-.hardcover-back li:first-child::before {
-	transform: rotateY(90deg) translateZ(158px) translateX(2px);
-}
-.hardcover-front li:last-child::after,
-.hardcover-back li:last-child::after {
-	transform: rotateX(90deg) rotateZ(90deg) translateZ(80px) translateX(-2px) translateY(-78px);
-}
-.hardcover-back li:last-child::before,
-.hardcover-front li:last-child::before {
-	box-shadow: 5px -1px 80px 5px rgba(0, 0, 0, .5);
-	transform: rotateX(90deg) rotateZ(90deg) translateZ(-140px) translateX(2px) translateY(-78px);
-}
 .book-spine li:first-child::after {
 	transform: rotateY(90deg) translateZ(-2px) translateX(2px);
 }
 .book-spine li:first-child::before {
 	transform: rotateY(-90deg) translateZ(-12px);
-}
-.book-spine li:last-child::after {
-	transform: rotateX(90deg) rotateZ(90deg) translateZ(8px) translateX(2px) translateY(-6px);
-}
-.book-spine li:last-child::before {
-	box-shadow: 5px -1px 80px 5px rgba(0, 0, 0, .5);
-	transform: rotateX(90deg) rotateZ(90deg) translateZ(-210px) translateX(2px) translateY(-6px);
 }
 .book:hover > .hardcover-front {
 	transform: rotateY(-145deg) translateZ(0);
