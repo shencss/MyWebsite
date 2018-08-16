@@ -492,6 +492,7 @@ a {
     border-radius: 15px;
     transition: all 1s linear;
     text-align: center;
+    padding: 20px;
 }
 .collection-list > li::after {
     content: '';
@@ -512,7 +513,6 @@ a {
     width: 78%;
     border-top-right-radius: 0;
     z-index: 5;
-    display: none;
 }
 .collection-list .collection-website::after {
     background-color: rgb(34,125,170);
@@ -521,7 +521,6 @@ a {
     background-color: rgb(57, 148, 187);
     width: 82%;
     z-index: 4;
-    display: none;
 }
 .collection-list .collection-blog::after {
     background-color: rgb(57, 148, 187);
@@ -541,7 +540,6 @@ a {
     width: 90%;
     border-bottom-right-radius: 0;
     z-index: 2;
-    display: none;
 }
 .collection-list .collection-css::after {
     background-color: #AAC7D9;
@@ -551,10 +549,9 @@ a {
     position: relative;
     height: 100%;
     width: 100%;
-    padding: 20px;
 }
-.collection-content h2 {
-    margin-bottom: 10px;
+.collection-content > p {
+    margin: 5px 0 10px 0;
 }
 .collection-content .collection-introduction {
     font-size: 10px;
@@ -608,16 +605,25 @@ a {
     flex-wrap: wrap;
 }
 .collection-book-list li {
-    flex: 0 1;
+    flex: 0 1 25%;
     color: #FFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.collection-book-list li p {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 /*** BOOK ***/
 .book {
-	position: relative;
+    position: relative;
 	width: 120px; 
-	height: 165px;
+    height: 150px;
+    margin: 0 auto;
 	perspective: 1000px;
-	transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 .hardcover-front,
 .hardcover-back,
@@ -647,8 +653,10 @@ a {
     transform: translateZ(2px);
     background-color: #EEE;
     backface-visibility: hidden;
-    background: url(booksPic/telescope.jpg) no-repeat;
-    background-size: 100% 100%;
+}
+.hardcover-front li:first-child img {
+    width: 100%;
+    height: 100%;
 }
 .hardcover-front li:last-child {
     transform: rotateY(180deg) translateZ(2px);
@@ -722,12 +730,12 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 25px;
-    padding-top: 2px;
+    width: 70px;
+    font-weight: bold;
+    height: 20px;
     border: 2px solid;
     color: #666;
-    font-size: 10px;
+    font-size: 8px;
     text-align: center;
 }
 .page > li:nth-child(2) a:hover {
@@ -745,7 +753,7 @@ a {
     position: absolute;
 	top: 0;
 	left: 0;
-	background: red;
+	background: #AAC7D9;
 }
 .hardcover-front li:first-child::after,
 .hardcover-front li:first-child::before,
