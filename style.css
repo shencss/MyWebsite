@@ -513,6 +513,7 @@ a {
     width: 78%;
     border-top-right-radius: 0;
     z-index: 5;
+    display: none;
 }
 .collection-list .collection-website::after {
     background-color: rgb(34,125,170);
@@ -530,6 +531,7 @@ a {
     background-color: rgb(81,172,205);
     width: 86%;
     z-index: 3;
+    display: none;
 }
 .collection-list .collection-book::after {
     background-color: rgb(81,172,205);
@@ -540,6 +542,7 @@ a {
     width: 90%;
     border-bottom-right-radius: 0;
     z-index: 2;
+    display: none;
 }
 .collection-list .collection-css::after {
     background-color: #AAC7D9;
@@ -571,6 +574,7 @@ a {
     color: #FFF;
     padding: 10px;
     transition: all .1s linear;
+    background-color: rgba(255, 255, 255, .1);
 }
 .collection-content .collection-website-list li:hover {
     transform: scale(1.05);
@@ -601,6 +605,71 @@ a {
     font-size: 15px;
     font-weight: normal;
 }
+
+/*** BLOGs ***/
+.collection-content .collection-blog-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    
+}
+.collection-blog-list > li {
+    flex:  0 1 100%;
+    color: #58798C;
+    cursor: pointer;
+    
+}
+.collection-blog-list > li:hover .blog-item a img {
+    transform: rotate(90deg);
+}
+.collection-blog-list > li .blog-item {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    border-bottom: 1px solid #DDD;
+    background-color: #FFF;
+}
+.collection-blog-list > li .blog-item  p {
+    float: left;
+}
+.collection-blog-list > li .blog-item  a {
+    float: right;
+    height: 100%;
+}
+.collection-blog-list > li .blog-item a img {
+    height:25px;
+    width: 25px;
+    margin-top: 7.5px;
+    transition: all .2s linear;
+}
+.collection-blog-list > li .blog-item-introduction {
+    position: relative;
+    color: #FFF;
+    background-color: #58798C;
+    transition: all .5s linear;
+    overflow: hidden;
+    height: 0;
+}
+.blog-item-introduction p {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 12px;
+}
+.blog-item-introduction ul {
+    text-align: start;
+    font-size: 5px;
+    padding: 5px 20px;
+}
+.blog-item-introduction ul li {
+    height: 20px;
+}
+
 /*** BOOKS ***/
 .collection-content .collection-book-list {
     display: flex;
