@@ -513,7 +513,6 @@ a {
     width: 78%;
     border-top-right-radius: 0;
     z-index: 5;
-    display: none;
 }
 .collection-list .collection-website::after {
     background-color: rgb(34,125,170);
@@ -531,7 +530,6 @@ a {
     background-color: rgb(81,172,205);
     width: 86%;
     z-index: 3;
-    display: none;
 }
 .collection-list .collection-book::after {
     background-color: rgb(81,172,205);
@@ -542,7 +540,6 @@ a {
     width: 90%;
     border-bottom-right-radius: 0;
     z-index: 2;
-    display: none;
 }
 .collection-list .collection-css::after {
     background-color: #AAC7D9;
@@ -606,42 +603,40 @@ a {
     font-weight: normal;
 }
 
-/*** BLOGs ***/
+/*** BLOGS ***/
 .collection-content .collection-blog-list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 20px;
+    margin: 30px 40px;
     border-radius: 15px;
     overflow: hidden;
-    
+    border: 1px solid #FFF; 
+    background-color: rgba(255, 255, 255, .1);
 }
 .collection-blog-list > li {
     flex:  0 1 100%;
-    color: #58798C;
-    cursor: pointer;
+    cursor: pointer; 
     
 }
-.collection-blog-list > li:hover .blog-item a img {
+.collection-blog-list > li:hover .blog-item img {
     transform: rotate(90deg);
 }
 .collection-blog-list > li .blog-item {
+    display: block;
+    color: #FFF;
     height: 40px;
     line-height: 40px;
     width: 100%;
     padding: 0 20px;
     border-bottom: 1px solid #DDD;
-    background-color: #FFF;
 }
 .collection-blog-list > li .blog-item  p {
     float: left;
 }
-.collection-blog-list > li .blog-item  a {
+.collection-blog-list > li .blog-item img {
     float: right;
-    height: 100%;
-}
-.collection-blog-list > li .blog-item a img {
     height:25px;
     width: 25px;
     margin-top: 7.5px;
@@ -650,8 +645,8 @@ a {
 .collection-blog-list > li .blog-item-introduction {
     position: relative;
     color: #FFF;
-    background-color: #58798C;
-    transition: all .5s linear;
+    background-color: rgb(34, 125, 170);
+    transition: all .5s .2s linear;
     overflow: hidden;
     height: 0;
 }
@@ -685,7 +680,7 @@ a {
 }
 .collection-book-list li p {
     font-size: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 /*** BOOK ***/
 .book {
