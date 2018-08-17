@@ -565,21 +565,24 @@ a {
 }
 .collection-content .collection-website-list li {
     flex: 0 1 21%;
-    background-color: #FFF;
+    border: 1px solid #FFF;
     border-radius: 5px;
     margin: 2%;
-    color: rgb(23, 88, 168);
+    color: #FFF;
     padding: 10px;
     transition: all .1s linear;
 }
 .collection-content .collection-website-list li:hover {
     transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
 .collection-content .collection-website-list li a {
     display: inline-block;
     font-weight: bold;
     letter-spacing: 0;
     font-weight: bold;
+    width: 100%;
+    text-align: center;
 }
 .collection-content .collection-website-list li a img {
     width: 30px;
@@ -590,8 +593,9 @@ a {
 .collection-content .collection-website-list li a hr {
     border: none;
     height: 1px;
-    background-color: rgb(23, 88, 168);
-    margin: 5px 0;
+    background-color: #FFF;
+    width: 90%;
+    margin: 5px auto;
 }
 .collection-content .collection-website-list li a p {
     font-size: 15px;
