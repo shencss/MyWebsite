@@ -1091,15 +1091,20 @@ a {
 .contact .icon-text::after {
     background-color: #FFF;
 }
-.contact-way .mail {
+.mail {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.mail-box-bg {
+    flex: 0 1 150px;
     position: relative;
-    width: 150px;
     height: 150px;
     background-color: #FFF;
     border-radius: 50%;
     overflow: hidden;
 }
-.mail .mail-box {
+.mail-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1111,7 +1116,7 @@ a {
     background-color: rgb(34,125,170);
     animation: mail-in .5s .2s ease-in-out both;
 }
-.mail .mail-box::before {
+.mail-box::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1121,7 +1126,7 @@ a {
     border-radius: 15px 15px 0 0;
     background-color: rgb(81,172,205);
 }
-.mail .mail-box::after {
+.mail-box::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -1131,7 +1136,7 @@ a {
     height: 55px;
     background-color: rgb(34,125,170);
 }
-.mail .mail-box .mail-flag {
+.mail-box .mail-flag {
     position: absolute;
     bottom: 25px;
     left: 45px;
@@ -1143,7 +1148,7 @@ a {
     transform-origin: 50% 100%;
     opacity: 0;
 }
-.mail .mail-box .mail-flag::before {
+.mail-box .mail-flag::before {
     content: '';
     position: absolute;
     top: 95%;
@@ -1154,7 +1159,7 @@ a {
     margin-left: -6px;
     border-radius: 50%;
 }
-.mail .mail-box .mail-flag::after {
+.mail-box .mail-flag::after {
     content: '';
     position: absolute;
     top: -6px;
@@ -1162,6 +1167,27 @@ a {
     width: 18px;
     height: 12px;
     background-color: #F56262;
+}
+.mail-address, .github-address {
+    float: left;
+    margin: 0 40px;
+    flex: 0 1 auto;
+}
+.mail-address p, .github-address p {
+    font-size: 12px;
+    color: #AAC7D9;
+    margin-bottom: 5px;
+}
+.github-address a {
+    color: #FFF;
+}
+.github-address a:hover {
+    text-decoration: underline;
+}
+.github-link img {
+    background-color: #FFF;
+    height: 100px;
+    width: 100px;
 }
 @keyframes mail-in {
     0% {
@@ -1180,3 +1206,4 @@ a {
         opacity: 1;
     }
 }
+
