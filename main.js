@@ -8,7 +8,6 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
         e.children[1].style.height = itemCount * 20 + 10 + 'px';
     }, false);
     e.addEventListener('mouseleave', () => {
-        //使用children而不要使用chlidNodes
         e.children[1].style.height = '0px';
     }, false);
 }
