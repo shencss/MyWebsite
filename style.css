@@ -513,7 +513,6 @@ a {
     width: 78%;
     border-top-right-radius: 0;
     z-index: 5;
-    display: none;
 }
 .collection-list .collection-website::after {
     background-color: rgb(34,125,170);
@@ -522,7 +521,6 @@ a {
     background-color: rgb(57, 148, 187);
     width: 82%;
     z-index: 4;
-    display: none;
 }
 .collection-list .collection-blog::after {
     background-color: rgb(57, 148, 187);
@@ -532,7 +530,6 @@ a {
     background-color: rgb(81,172,205);
     width: 86%;
     z-index: 3;
-    display: none;
 }
 .collection-list .collection-book::after {
     background-color: rgb(81,172,205);
@@ -571,10 +568,10 @@ a {
     border: 1px solid #FFF;
     border-radius: 5px;
     margin: 2%;
-    color: #FFF;
+    color: #58798C;
     padding: 10px;
     transition: all .1s linear;
-    background-color: rgba(255, 255, 255, .1);
+    background-color: #FFF;
 }
 .collection-content .collection-website-list li:hover {
     transform: scale(1.05);
@@ -597,13 +594,14 @@ a {
 .collection-content .collection-website-list li a hr {
     border: none;
     height: 1px;
-    background-color: #FFF;
+    background-color: #58798C;
     width: 90%;
     margin: 5px auto;
 }
 .collection-content .collection-website-list li a p {
     font-size: 15px;
     font-weight: normal;
+    letter-spacing: 0px;
 }
 
 /*** BLOGS ***/
@@ -615,13 +613,13 @@ a {
     margin: 30px 40px;
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid #FFF; 
-    background-color: rgba(255, 255, 255, .1);
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
 }
 .collection-blog-list > li {
     flex:  0 1 100%;
     cursor: pointer; 
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #DDD;
 }
 .collection-blog-list > li:last-of-type {
     border-bottom: none;
@@ -631,7 +629,7 @@ a {
 }
 .collection-blog-list > li .blog-item {
     display: block;
-    color: #FFF;
+    color: #58798C;
     height: 40px;
     line-height: 40px;
     width: 100%;
@@ -650,7 +648,7 @@ a {
 .collection-blog-list > li .blog-item-introduction {
     position: relative;
     color: #FFF;
-    background-color: rgb(34, 125, 170);
+    background-color: #58798C;;
     transition: height .5s .2s linear;
     overflow: hidden;
     height: 0;
