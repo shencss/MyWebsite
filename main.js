@@ -11,3 +11,18 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
         e.children[1].style.height = '0px';
     }, false);
 }
+/*
+let percentage = 0;
+const skillPercentage = document.getElementById('test');
+const loadPercentage = () => {
+    clockTimeId = setTimeout(function start() {
+        skillPercentage.setAttribute('data-percentage', +percentage);
+        percentage++;
+        clockTimeId = setTimeout(start, 1000);
+    }, 1000);
+}
+loadPercentage();
+
+*/
+
+

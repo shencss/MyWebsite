@@ -221,21 +221,27 @@ a {
     background-color: rgb(34, 125, 170);
 }
 .skill-list {
+    float: left;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 .skill-list li {
+    flex: 0 1 50%;
     display: inline-block;
-    width: 50%;
     height: 70px;
+    cursor: pointer;
+    padding-right: 100px;
+}
+.skill-list li:not(:last-of-type) {
+    margin-bottom: 10px;
 }
 .skill-percentage {
     margin-top: 5px;
     position: relative;
     height: 10px;
-    width: 85%;
     background-color: #DEEEF5;
 }
 .skill-percentage::after {
@@ -244,21 +250,74 @@ a {
     top: 0;
     left: 0;
     height: 100%;
-    width: 50%;
+    width: 0;
     background: linear-gradient(to right, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
+    animation: percentage-load 1s .5s ease-in both;
 }
 .skill-percentage::before {
-    content: '50%';
+    content: attr(data-percentage);
     position: absolute;
-    bottom: 20px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
     height: 30px;
+    text-align: center;
+    line-height: 25px;
     color: #FFF;
+    font-size: 12px;
     border-radius: 50%;
-    background-color: rgb(81,172,205);
-
+    background: url(icons/bubble-icon.png) no-repeat;
+    background-size: 100% 100%;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+.skill-level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+.skill-list li:hover .skill-percentage::before {
+    opacity: 1;
+}
+.skill-list li:hover .skill-level {
+    opacity: 1;
+}
+@keyframes percentage-load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+.skill-introduction {
+    float: right;
+    width: 30%;
+}
+.skill-introduction div {
+    margin-bottom: 10px;
+}
+.skill-introduction h3 {
+    margin: 5px;
+    position: relative;
+    width: auto;
+    padding-left: 8px; 
+}
+.skill-introduction h3::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 90%;
+    background-color: rgb(34,125,170);
+}
+.skill-introduction p {
+    font-size: 12px;
+    margin: 5px;
 }
 
 /***EDUCATION ***/
