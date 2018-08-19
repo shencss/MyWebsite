@@ -89,6 +89,14 @@ function handleOnElementFadeIn() {
     //len - 1：contact部分不需要fadein特效
     for(let i = 0, len = blocks.length; i < len - 1; i++) {
         addCSSFadeIn(blocks[i]);
+        
+        //滚动到SKILLSET部分时将percentage的display出来，而它的伪类会执行动画
+        if(i == 2) {
+            const percentages =  document.getElementsByClassName('skill-percentage');
+            for(let j = 0, len = percentages.length; j < len; j++) {
+                percentages[j].style.display = 'block';
+            }
+        }
     }
     addCSSFadeIn(introduction);    
 

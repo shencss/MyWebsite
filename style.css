@@ -250,6 +250,7 @@ a {
     position: relative;
     height: 10px;
     background-color: #DEEEF5;
+    display: none;
 }
 .skill-percentage::after {
     content: '';
@@ -259,7 +260,8 @@ a {
     height: 100%;
     width: 0;
     background: linear-gradient(to right, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
-    animation: percentage-load 1s .5s ease-in both;
+    animation:  1s 1.5s ease-in both;
+    animation-name: percentage-load;
 }
 .skill-percentage::before {
     content: attr(data-percentage);
