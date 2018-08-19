@@ -25,24 +25,30 @@ loadPercentage();
 
 */
 //获取DOM元素
-const nav = document.querySelector('nav');
-const header = document.querySelector('header');
-const about = document.querySelector('about');
-const experience = document.querySelector('experience');
-const skillset = document.querySelector('skillset');
-const education = document.querySelector('education');
-const works = document.querySelector('works');
-const notes = document.querySelector('notes');
-const collections = document.querySelector('collections');
-const notes = document.querySelector('contact');
+const nav = document.querySelector('.nav');
+const header = document.querySelector('.header');
+const about = document.querySelector('.about');
+const experience = document.querySelector('.experience');
+const skillset = document.querySelector('.skillset');
+const education = document.querySelector('.education');
+const works = document.querySelector('.works');
+const notes = document.querySelector('.notes');
+const collections = document.querySelector('.collections');
+const contact = document.querySelector('.contact');
+
 
 const navHeight = nav.offsetHeight;
 let scrollHeightNow =  document.body.scrollTop || document.documentElement.scrollTop; 
-function handleOnScroll() {
+
+
+//如果滚动超过导航条高度则导航条缩小
+function handleOnNavSilde() {
     let scrollHeightNext =  document.body.scrollTop || document.documentElement.scrollTop; 
-    console.log(scrollHeightNext)
+    //showNav布尔值是为了减少DOM操作
     let showNav = true;
+    //如果滚动高度超过Nav高度
     if(scrollHeightNow > navHeight) {
+        //如果向上滚动
         if(scrollHeightNext < scrollHeightNow) {
             showNav = true;
         } else {
@@ -58,4 +64,31 @@ function handleOnScroll() {
     }  
     scrollHeightNow = scrollHeightNext
 } 
-window.addEventListener('scroll', handleOnScroll)
+
+//判断元素顶部是否进入可视区域
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top < (window.innerHight || document.documentElement.clientHeight);
+    
+}
+
+//如果元素进入顶部进入可是区域则通过fade-in类形成fadeIn特效
+function addCSSFadeIn(el) {
+    if(isElementInViewport(el)) {
+        el.classList.add('fade-in');
+    }
+}
+//为introduction及所有block执行addCSSFadeIn函数
+function handleOnElementFadeIn() {
+    const blocks = document.getElementsByClassName('block');
+    const introduction = document.querySelector('.introduction');
+    //len - 1：contact部分不需要fadein特效
+    for(let i = 0, len = blocks.length; i < len - 1; i++) {
+        addCSSFadeIn(blocks[i]);
+    }
+    addCSSFadeIn(introduction);
+}
+
+window.addEventListener('load', handleOnNavSilde);
+window.addEventListener('load', handleOnElementFadeIn);
+window.addEventListener('scroll', handleOnElementFadeIn);
