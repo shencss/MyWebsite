@@ -81,9 +81,6 @@ function addCSSFadeIn(el) {
 //为introduction及所有block执行addCSSFadeIn函数
 let hasReachBottom = false;
 function handleOnElementFadeIn() {
-    if(isElementInViewport(contact)) {
-        hasReachBottom = true;
-    }
     //滚到到底部之后便结束
     if(hasReachBottom) return;
 
@@ -93,7 +90,11 @@ function handleOnElementFadeIn() {
     for(let i = 0, len = blocks.length; i < len - 1; i++) {
         addCSSFadeIn(blocks[i]);
     }
-    addCSSFadeIn(introduction);       
+    addCSSFadeIn(introduction);    
+
+    if(!hasReachBottom && isElementInViewport(contact)) {
+        hasReachBottom = true;
+    }  
 }
 
 window.addEventListener('scroll', handleOnNavSilde);
