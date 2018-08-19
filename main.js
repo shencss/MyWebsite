@@ -109,3 +109,25 @@ function handleOnElementFadeIn() {
 window.addEventListener('scroll', handleOnNavSilde);
 window.addEventListener('load', handleOnElementFadeIn);
 window.addEventListener('scroll', handleOnElementFadeIn);
+
+//在NOTES部分点击Details按钮，则呈现笔记
+const detailBtns = document.getElementsByClassName('detail-btn');
+const noteDetails = document.getElementsByClassName('note-details');
+const closeBtns = document.getElementsByClassName('close-btn');
+const cover = document.querySelector('.cover');
+for(let i = 0, len = detailBtns.length; i < len; i++) {
+    detailBtns[i].addEventListener('click', () => {
+        cover.style.display = 'block';
+        noteDetails[i].style.display = 'block';
+        noteDetails[i].style.animation = 'detail-fade-in .5s linear both';
+        //点击遮罩或关闭按钮则关闭
+        cover.addEventListener('click', () => {
+            noteDetails[i].style.display = 'none';
+            cover.style.display = 'none';
+        });
+        closeBtns[i].addEventListener('click', () => {
+            noteDetails[i].style.display = 'none';
+            cover.style.display = 'none';
+        });
+    });
+}

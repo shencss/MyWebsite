@@ -392,24 +392,27 @@
                     <img src="icons/css.jpg" alt="css-icon">
                     <h3>CSS Notes</h3>
                     <p>—— 个人积累的CSS笔记</p>
-                    <p>1.Border-box</p>
-                    <p>2.position：absolute</p>
-                    <p>3.transform-style：preserve-3D</p>
+                    <p>1.border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</p>
+                    <p>2.position：absolute会把元素变成块级元素，然后换行</p>
+                    <p>3.transform-style：preserve-3D会保留和呈现子元素的3D位置</p>
                     <p>.......</p>
-                    <button>Details</button>
+                    <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
                     <div class="img-bg">
                         <img src="icons/css.jpg" alt="">
                     </div>
-                    <div class="note-content">
-                        <h3>CSS Notes</h3>
+                    <div class="note-header">
+                        <h4>CSS Notes</h4>
                         <p>—— by shencss</p>
+                        <div class="close-btn"></div>
+                    </div>
+                    <div class="note-content">
                         <ol>
-                            <li>Border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</li>
-                            <li>position：absolute会把元素变成块级元素，换行</li>
-                            <li>按钮的cursor要设置为pointer</li>
+                            <li>border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</li>
+                            <li>position：absolute会把元素变成块级元素，然后换行</li>
                             <li>transform-style：preserve-3D会保留和呈现子元素的3D位置</li>
+                            <li>按钮的cursor要设置为pointer</li>
                             <li>transform-origin是设置旋转的基点</li>
                             <li>perspective是视距，决定用户与Z轴之间的距离，perspective-origin决定视线的左右和上下位置</li>
                             <li>@font-face字体格式：IE浏览器——EOT；Mozilla浏览器——OTF，TTF；Safari浏览器——OTF，TTF，SVG；Chrome浏览器——TTF，SVG</li>
@@ -419,6 +422,26 @@
                             <li>img{width:100% height:100%}可以将img整个放入div中</li>
                             <li>box-shadow:0px 0px 1px rgba(0,0,0,1)可以使得阴影四周分布</li>
                             <li>opacity会使内容也透明，rgba可以解决这个问题</li>
+                            <li>Localstorage只存储string,需要结合JSON使用</li>
+                            <li>position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);可以宽高自适应居中/li>
+                            <li>$("#zkdiv").on("click",".zk",function(){ console.log("on 点击一次"); });解决后append的元素没有监听事件</li>
+                            <li>font: 12px/1.5中的12px是字体大小，1.5*12px是行高</li>
+                            <li>:nth-child(even)偶数子元素，nth-child(odd)奇数子元素</li>
+                            <li>::selection可以自定被选中文字的样式</li>
+                            <li>div::before {content:"";position: absolute;border-style: solid;left: -15px;border-width: 8px 16px 8px 0;border-color: transparent red transparent transparent;}在div前面画出小三角形</li>
+                            <li>getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left等属性</li>
+                            <li>bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y):添加(cp1x,cp1y)、(cp2x,cp2y)两个控制点使得曲线弯曲</li>
+                            <li>Link标签的样式a标签影响</li>
+                            <li>Pointer-events：none能使指定元素不成为鼠标事件的目标，且鼠标还能穿过元素并指向元素下面的元素</li>
+                            <li>CSS层叠：正z-index > z-index:0 > inline/inline-box > float > block > 负z-index > background</li>
+                            <li>父级元素使用了transform属性会使子级元素的fixed定位失效</li>
+                            <li>backface-visibility：在旋转元素时设置其背面的可见性</li>
+                            <li>box-shadow：inset设置元素内阴影</li>
+                            <li>伪元素一定要有content属性才会存在</li>
+                            <li>input、img、iframe等元素都不能包含其他元素，所以不能通过伪元素插入内容</li>
+                            <li>CSS3的nth-of-type选择器要求元素是同级的</li>
+                            <li>img下方空白：对于没有行内元素的box，baseline为底部边缘。如果有inline元素，对齐baseline为inline元素的baseline。在box中虽然没有其他字符，但是默认有一个类似长度为0的空白字符，此时就会使底部高度被撑高。</li>
+                            <li>用animation来实现JQ中的fadeIn，让display为none的元素能有过渡效果</li>
                         </ol>
                     </div>
                 </div>
@@ -428,33 +451,46 @@
                     <img src="icons/js.jpg" alt="js-icon">
                     <h3>JS Notes</h3>
                     <p>—— 个人积累的JS笔记</p>
-                    <p>1.Border-box</p>
-                    <p>2.position：absolute</p>
-                    <p>3.transform-style：preserve-3D</p>
+                    <p>1.if(arry)不能判断数组为空，必须用if(array === undefined || array.length == 0)</p>
+                    <p>2.Range.prototype = {}这样设置原型对象会失预定义的原型对象</p>
+                    <p>3.nextSibling、chlidNodes等DOM API容易取到空白的text节点</p>
                     <p>.......</p>
-                    <button>Details</button>
+                    <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
                     <div class="img-bg">
                         <img src="icons/js.jpg" alt="">
                     </div>
-                    <div class="note-content">
-                        <h3>CSS Notes</h3>
+                    <div class="note-header">
+                        <h4>CSS Notes</h4>
                         <p>—— by shencss</p>
+                        <div class="close-btn"></div>
+                    </div>
+                    <div class="note-content">
                         <ol>
-                            <li>Border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</li>
-                            <li>position：absolute会把元素变成块级元素，换行</li>
-                            <li>按钮的cursor要设置为pointer</li>
-                            <li>transform-style：preserve-3D会保留和呈现子元素的3D位置</li>
-                            <li>transform-origin是设置旋转的基点</li>
-                            <li>perspective是视距，决定用户与Z轴之间的距离，perspective-origin决定视线的左右和上下位置</li>
-                            <li>@font-face字体格式：IE浏览器——EOT；Mozilla浏览器——OTF，TTF；Safari浏览器——OTF，TTF，SVG；Chrome浏览器——TTF，SVG</li>
-                            <li>cubic-bezier(x1,y1,x2,y2)用于animation自定义自己的速度曲线（cubic-bezier(.81, -0.62, 0.23, 1.92)实现蓄力回弹的速度曲线）</li>
-                            <li>animation-fill-mode控制元素在动画执行前和执行后的样式</li>
-                            <li>translate（100%）相对元素自身的宽高在X轴和Y轴上面移动</li>
-                            <li>img{width:100% height:100%}可以将img整个放入div中</li>
-                            <li>box-shadow:0px 0px 1px rgba(0,0,0,1)可以使得阴影四周分布</li>
-                            <li>opacity会使内容也透明，rgba可以解决这个问题</li>
+                            <li>if(arry)不能判断数组为空，必须用if(array === undefined || array.length == 0)</li>
+                            <li>Range.prototype = {}这样设置原型对象会失去预定义的原型对象，而需要手动添加constructor属性指向构造函数</li>
+                            <li>nextSibling、chlidNodes等DOM API容易取到空白的text节点</li>
+                            <li>浏览器为了提高用户访问同一页面的速度，会对页面数据进行缓存。当url请求地址不变时，有时候会导致浏览器不发送请求，直接从缓存中读取之前的数据。如果数据改变了，而没加随机数，读取的数据会跟之前一样。加上随机数或时间戳，就是欺骗浏览器url改变了，会每次都向服务器发送请求而不去读缓存</li>
+                            <li>BOM结构：图略</li>
+                            <li>document.documentElement.scrollHeight、scrollWidth获取页面的大小，document.documentElement.clientHeight、clientWidth获取可视区域的大小，el.offsetHeight、offsetWidth获取元素的大小</li>
+                            <li>getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。</li>
+                            <li>let声明的变量只在所在的代码块（块级作用域）里有效，形成TDZ，只能从声明开始之后的地方使用</li>
+                            <li>Const 声明的变量同样只在块级作用域中有效，但是值无法改变且必须立即初始化。Const存复合类型只是所存储的地址不变</li>
+                            <li>解构赋值：从数组或对象中获取数据的方式更方便简单。可以设置默认值（严格为undefined才取默认值）；解构对象必须同名（使用模式）；已声明的变量进行解构必须用大括号包裹；交换数值、指定函数参数默认值、提取JSON数据很便捷</li>
+                            <li>字符串搜索：indexOf()、includes()、	startsWith()、endsWith();字符串重复：repeat();字符串补全:padStart()、padEnd()</li>
+                            <li>/^[a-z]$/只匹配a-z字母中的一个(^匹配开头 &匹配结尾)</li>
+                            <li>y修饰符：后一次匹配从上一次匹配成功的下一个位置开始，相比于g修饰符隐含一个^头部匹配，有y修饰符就有sticky属性</li>
+                            <li>传统的isFinit()和isNaN(n)会对n执行Number()函数，而Number.isFinite()和Number.isNaN()不会</li>
+                            <li>JS数值存储为64位双精度格式，如果数值精度超过53位二进制，第54位后面的位会被抛弃，存在小误差（最小精度：Numer.EPSILON=pow（2，-52），上限：Number.MAX_SAFE_INTEGER=pow(2,53)-1,下限：Number.MAX_SAFE_INTEGER=-pow(2,53)+1,）</li>
+                            <li>箭头函数没有自己的this，所以它会“借用”自己所在的作用域的this，从而使得在箭头函数中this的指向是固定的</li>
+                            <li>尾调用优化：在函数的内部调用函数会不停地堆起调用栈，消耗内存，但是如果把外层函数调用放在一个函数的最后一步，不再使用外层函数的信息，则外层函数的信息不再需要保存，内存被释放，在尾调递归能很好地优化递归（尾调只在严格模式下生效）</li>
+                            <li>Object.is()：相比于===，+0不等于-0，NaN等于NaN Object.getOwnPropertyDescriptor</li>
+                            <li>__proto__：用来读取和设置当前对象的原型对象，但作为内部属性，应该避免使用这个属性</li>
+                            <li>Super()关键字：this在函数中指向当前对象，super则指向原型对象（只能在对象的简写方法中访问）</li>
+                            <li>Object.keys(obj)、Object.values(obj)、Object.entries(obj)、分别返回对象的属性名数组、属性值数组和属性数组（非Symbol可枚举属性）</li>
+                            <li>对象也可以使用拓展运算符，用于取出参数对象的可遍历属性，拷贝到当前对象中（拓展运算符后的同名属性会覆盖前面的属性值）。对象的解构赋值是浅复制且不会拷贝原型对象的属性</li>
+                            <li>对于自调用函数，代码之前和之后的分号;都是不能省略的</li>
                         </ol>
                     </div>
                 </div>
@@ -464,33 +500,26 @@
                     <img src="icons/jq.png" alt="react-icon">
                     <h3>JQuery Notes</h3>
                     <p>—— 个人积累的JQuery笔记</p>
-                    <p>1.Border-box</p>
-                    <p>2.position：absolute</p>
-                    <p>3.transform-style：preserve-3D</p>
+                    <p>1.JQ结构：入口模块+功能模块+底层支持模块</p>
+                    <p>2.JQ使用自调用函数避免JQ代码受其他代码干扰，以及破坏和污染全局变量</p>
+                    <p>3.$('#my-canvas')在JQ中拿不到canvas元素，要$('#my-canvas').get(0)</p>
                     <p>.......</p>
-                    <button>Details</button>
+                    <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
                     <div class="img-bg">
                         <img src="icons/jq.png" alt="">
                     </div>
-                    <div class="note-content">
-                        <h3>React Notes</h3>
+                    <div class="note-header">
+                        <h4>CSS Notes</h4>
                         <p>—— by shencss</p>
+                        <div class="close-btn"></div>
+                    </div>
+                    <div class="note-content">
                         <ol>
-                            <li>Border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</li>
-                            <li>position：absolute会把元素变成块级元素，换行</li>
-                            <li>按钮的cursor要设置为pointer</li>
-                            <li>transform-style：preserve-3D会保留和呈现子元素的3D位置</li>
-                            <li>transform-origin是设置旋转的基点</li>
-                            <li>perspective是视距，决定用户与Z轴之间的距离，perspective-origin决定视线的左右和上下位置</li>
-                            <li>@font-face字体格式：IE浏览器——EOT；Mozilla浏览器——OTF，TTF；Safari浏览器——OTF，TTF，SVG；Chrome浏览器——TTF，SVG</li>
-                            <li>cubic-bezier(x1,y1,x2,y2)用于animation自定义自己的速度曲线（cubic-bezier(.81, -0.62, 0.23, 1.92)实现蓄力回弹的速度曲线）</li>
-                            <li>animation-fill-mode控制元素在动画执行前和执行后的样式</li>
-                            <li>translate（100%）相对元素自身的宽高在X轴和Y轴上面移动</li>
-                            <li>img{width:100% height:100%}可以将img整个放入div中</li>
-                            <li>box-shadow:0px 0px 1px rgba(0,0,0,1)可以使得阴影四周分布</li>
-                            <li>opacity会使内容也透明，rgba可以解决这个问题</li>
+                            <li>JQ结构：入口模块+功能模块+底层支持模块</li>
+                            <li>JQ使用自调用函数避免JQ代码受其他代码干扰，以及破坏和污染全局变量</li>
+                            <li>$('#my-canvas')在JQ中拿不到canvas元素，要$('#my-canvas').get(0)</li>
                         </ol>
                     </div>
                 </div>
@@ -500,33 +529,52 @@
                     <img src="icons/react.png" alt="react-icon">
                     <h3>React Notes</h3>
                     <p>—— 个人积累的React笔记</p>
-                    <p>1.Border-box</p>
-                    <p>2.position：absolute</p>
-                    <p>3.transform-style：preserve-3D</p>
+                    <p>1.this.setState：this.state通常是用来初始化state的，this.setstate是用来修改state值的</p>
+                    <p>2.JSX经过Babel编译+React.js构造变成JS对象，再经过ReactDom.render变成DOM元素</p>
+                    <p>3.用className代替标签中的class属性，用htmlFor代替label标签中的for属性</p>
                     <p>.......</p>
-                    <button>Details</button>
+                    <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
                     <div class="img-bg">
                         <img src="icons/react.png" alt="">
                     </div>
-                    <div class="note-content">
-                        <h3>React Notes</h3>
+                    <div class="note-header">
+                        <h4>CSS Notes</h4>
                         <p>—— by shencss</p>
+                        <div class="close-btn"></div>
+                    </div>
+                    <div class="note-content">
                         <ol>
-                            <li>Border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</li>
-                            <li>position：absolute会把元素变成块级元素，换行</li>
-                            <li>按钮的cursor要设置为pointer</li>
-                            <li>transform-style：preserve-3D会保留和呈现子元素的3D位置</li>
-                            <li>transform-origin是设置旋转的基点</li>
-                            <li>perspective是视距，决定用户与Z轴之间的距离，perspective-origin决定视线的左右和上下位置</li>
-                            <li>@font-face字体格式：IE浏览器——EOT；Mozilla浏览器——OTF，TTF；Safari浏览器——OTF，TTF，SVG；Chrome浏览器——TTF，SVG</li>
-                            <li>cubic-bezier(x1,y1,x2,y2)用于animation自定义自己的速度曲线（cubic-bezier(.81, -0.62, 0.23, 1.92)实现蓄力回弹的速度曲线）</li>
-                            <li>animation-fill-mode控制元素在动画执行前和执行后的样式</li>
-                            <li>translate（100%）相对元素自身的宽高在X轴和Y轴上面移动</li>
-                            <li>img{width:100% height:100%}可以将img整个放入div中</li>
-                            <li>box-shadow:0px 0px 1px rgba(0,0,0,1)可以使得阴影四周分布</li>
-                            <li>opacity会使内容也透明，rgba可以解决这个问题</li>
+                            <li>this.setState：this.state通常是用来初始化state的，this.setstate是用来修改state值的。如果初始化了state之后再使用this.state，之前的state会被覆盖掉，如果使用this.setState,只会替换掉相应的state值</li>
+                            <li>JSX经过Babel编译+React.js构造变成JS对象，再经过ReactDom.render变成DOM元素然后插入页面。不直接从 JSX 直接渲染构造 DOM 结构：1.当拿到一个表示UI的结构和信息的对象以后，不一定会把元素渲染到浏览器的普通页面上，有可能需要把这个结构渲染到canvas上，或者是手机App上，这也是为什么会要把react-dom单独抽离出来的原因。2.有了这样一个对象，当数据变化，需要更新组件的时候，就可以用比较快的算法操作这个JS对象，而不用直接操作页面上的DOM，这样可以尽量少的减少浏览器重排，极大地优化性能</li>
+                            <li>用className代替标签中的class属性，用htmlFor代替label标签中的for属性</li>
+                            <li>render方法要返回一个JSX元素，并且必须要用一个外层JSX元素包裹所有内容</li>
+                            <li>用{}在JSX中插入任何JS代码（也可以插在标签内部如标签的属性上），包括变量、表达式计算、函数执行以及JSX等等。Render方法会把这些代码返回的内容如实地渲染到页面上</li>
+                            <li>自定义组件都必须使用大写字母开头，普通html标签使用小写字母</li>
+                            <li>一个组件的显示形态是可以由它数据状态和配置参数决定的</li>
+                            <li>事件监听：React.js封装好了一系列的on*的属性，当需要为某个元素监听某个事件的时候，只需要简单地加上on*就可以（这些on*的事件监听只能用在普通的HTML的标签上，而不能用在组件标签上）。而且不需要考虑不同浏览器兼容性的问题，React.js封装好这些细节了（这些事件属性名都必须要用驼峰命名法）</li>
+                            <li>event对象：事件监听函数会被自动传入一个event对象，但React.js 中的event对象并不是浏览器提供的，而是它自己内部所构建的。React.js 将浏览器原生的event对象封装了一下，对外提供统一的API和属性，从而不用考虑不同浏览器的兼容性问题</li>
+                            <li>事件this：手动地将实例方法bind(this)到当前实例上再传入给 React.js，就可以在事件函数当中使用当前的实例</li>
+                            <li>setState()：接受一个对象或者函数作为参数，当调用这个函数的时候，React.js会更新组件的状态state，并且重新调用render方法，然后再把render方法所渲染的最新的内容显示到页面上（不能直接用 this.state = xxx 这种方式来修改）</li>
+                            <li>setState(fn(prevState))：当调用setState的时候，React.js并不会马上修改state，而是把这个对象放到一个更新队列里面，稍后才会从队列当中把新的状态提取出来合并到state当中，然后再触发组件更新。解决这问题就是在setState中传入函数，React.js 会把上一个setState的结果传入这个函数，就可以使用该结果进行运算、操作，然后返回一个对象作为更新state的对象</li>
+                            <li>props：组件的props参数让组件能适应不同场景下的需求让组件具有一定的“可配置”性，每个组件都可以接受一个 props参数，它是一个对象，包含了所有你对这个组件的配置。在使用一个组件的时候，可以把参数放在标签的属性当中，所有的属性都会作为 props 对象的键值（props是不可修改的，避免这个组件显示形态和行为变得不可预测，但是可以通过父组件主动重新渲染的方式来传入新的 props，从而达到更新的效果）</li>
+                            <li>defaultProps：在组件上添加static defaultProps={}（格式是固定的）就可以为组件设置默认的props，如果props没有传进来，会直接使用defaultProps中的默认属性，可以避免手动去判断props是否存在</li>
+                            <li>state VS props：state是让组件控制自己的状态,props是让外部对组件自己进行配置。使用原则：尽量少地用state，尽量多地用props</li>
+                            <li>无状态组件：没有state的组件叫无状态组件（stateless component），因为状态会带来管理的复杂性，所有尽量多地写无状态组件，尽量少地写有状态的组件。这样会降低代码维护的难度，也会在一定程度上增强组件的可复用性</li>
+                            <li>函数式组件：通常一个组件是通过继承Component来构建，一个子类就是一个组件。而用函数式的组件编写方式是一个函数就是一个组件。但是函数式组件只能接受props而无法像跟类组件一样可以在constructor里面初始化state（没有render，只会return JSX）</li>
+                            <li>渲染JSX数组：React.js把插入表达式数组里面的每一个JSX元素一个个罗列下来，渲染到页面上。如果往 {} 放一个数组，React.js 会帮你把数组里面一个个元素罗列并且渲染出来（在React.js用map来处理、渲染数据列表）</li>
+                            <li>Key属性：对于在数组中将要罗列渲染到页面上的元素，都要为每个元素加上 key 属性（ React.js 通过 key 来标识元素，从而尽量复用元素内部的结构，减少DOM操作），这个 key 必须是每个元素唯一的标识（例如循环计数器 i ）</li>
+                            <li>受控组件：类似于input、select、textarea>这些元素的value值被React.js所控制、渲染的组件，在 React.js 当中被称为受控组件（Controlled Component），需要设计事件监听来响应</li>
+                            <li>向父组件传数据：父组件只需要通过props给子组件传入一个回调函数。当子组件的点击事件发生的时候，子组件调用props中的回调函数并且将state传入该函数即可（组件之间就使用props通过父元素来传递数据）</li>
+                            <li>状态提升：当某个状态被多个组件依赖或者影响的时候，就把该状态提升到这些组件的最近公共父组件中去管理，用props传递数据或者函数来管理这种依赖或着影响的行为</li>
+                            <li>挂载：React.js将组件渲染，并且构造DOM元素然后塞入页面的过程称为组件的挂载，即初始化组件 -> 挂载</li>
+                            <li>生命周期：挂载阶段(componentWillMount+componentDidMount+componentWillUnmount+componentWillMount+componentWillUnmount) -> 更新阶段(shouldComponentUpdate+componentWillReceiveProps+componentWillUpdate+componentDidUpdate)</li>
+                            <li>ref属性：用来获取已经挂载的元素的DOM节点，然后可以在componentDidMount中使用这个DOM元素，并且调用该元素的DOM API，但是能不用ref就不用</li>
+                            <li>dangerouslySetInnerHTML属性：出于安全考虑的原因（XSS攻击），在React.js当中所有的表达式插入的任何HTML格式都会被转义掉，可以慎重使用dangerouslySetInnerHTML={{__html: this.state.content}}动态渲染元素的innerHTML结构</li>
+                            <li>style属性：style 接受一个对象，这个对象里面是这个元素的CSS属性键值对，CSS属性要换成驼峰命名，可以使用props或者state中的数据生成样式对象再传给元素</li>
+                            <li>propTypes库：通过PropTypes给组件的参数做类型限制，可以迅速定位错误；给组件加上propTypes，也让组件的开发、使用更加规范清晰</li>
+                            <li>constructor(props){super(props)...}：在构造函数中需要用到props中的值时就需要传入props</li>
                         </ol>
                     </div>
                 </div>
@@ -1005,7 +1053,22 @@
                                         <li>4.基友关系暴露之后</li>
                                     </ul>
                                 </div>
-                            </li>                        
+                            </li> 
+                            <li>
+                                <a href="https://www.cnblogs.com/2010master/p/5824215.html" target="_blank" class="blog-item">
+                                    <p>javascript中BOM部分基础知识总结</p>
+                                    <img src="icons/arrow-icon.png" alt="">
+                                </a>
+                                <div class="blog-item-introduction">
+                                    <p>作者：cnjs</p>
+                                    <ul>
+                                        <li>1.什么是BOM</li>
+                                        <li>2.学习BOM学什么</li>
+                                        <li>3.window对象</li>
+                                        <li>4.BOM零碎知识（window对象）</li>
+                                    </ul>
+                                </div>
+                            </li>                       
                         </ul>  
                     </div>
                 </div>
