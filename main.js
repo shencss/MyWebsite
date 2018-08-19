@@ -24,5 +24,38 @@ const loadPercentage = () => {
 loadPercentage();
 
 */
+//获取DOM元素
+const nav = document.querySelector('nav');
+const header = document.querySelector('header');
+const about = document.querySelector('about');
+const experience = document.querySelector('experience');
+const skillset = document.querySelector('skillset');
+const education = document.querySelector('education');
+const works = document.querySelector('works');
+const notes = document.querySelector('notes');
+const collections = document.querySelector('collections');
+const notes = document.querySelector('contact');
 
-
+const navHeight = nav.offsetHeight;
+let scrollHeightNow =  document.body.scrollTop || document.documentElement.scrollTop; 
+function handleOnScroll() {
+    let scrollHeightNext =  document.body.scrollTop || document.documentElement.scrollTop; 
+    console.log(scrollHeightNext)
+    let showNav = true;
+    if(scrollHeightNow > navHeight) {
+        if(scrollHeightNext < scrollHeightNow) {
+            showNav = true;
+        } else {
+            showNav = false;
+        } 
+    } else {
+        showNav = true;   
+    }
+    if(!showNav) {
+        nav.style.height = '5px';
+    } else {
+        nav.style.height = '70px';
+    }  
+    scrollHeightNow = scrollHeightNext
+} 
+window.addEventListener('scroll', handleOnScroll)
