@@ -267,7 +267,7 @@ a {
     content: attr(data-percentage);
     position: absolute;
     bottom: 12px;
-    left: 50%;
+    left: 68%;
     transform: translateX(-50%);
     width: 30px;
     height: 30px;
@@ -281,12 +281,65 @@ a {
     transition: all .3s ease-in-out;
     opacity: 0;
 }
+/** 设置各个进度各自的值 **/
+.skill-list li:nth-of-type(1) .skill-percentage::after {
+    width: 70%;
+}
+.skill-list li:nth-of-type(1) .skill-percentage::before {
+    left: 70%;
+}
+.skill-list li:nth-of-type(2) .skill-percentage::after {
+    width: 65%;
+}
+.skill-list li:nth-of-type(2) .skill-percentage::before {
+    left: 65%;
+}
+.skill-list li:nth-of-type(3) .skill-percentage::after {
+    width: 60%;
+}
+.skill-list li:nth-of-type(3) .skill-percentage::before {
+    left: 60%;
+}
+.skill-list li:nth-of-type(4) .skill-percentage::after {
+    width: 55%;
+}
+.skill-list li:nth-of-type(4) .skill-percentage::before {
+    left: 55%;
+}
+.skill-list li:nth-of-type(5) .skill-percentage::after {
+    width: 45%;
+}
+.skill-list li:nth-of-type(5) .skill-percentage::before {
+    left: 45%;
+}
+.skill-list li:nth-of-type(6) .skill-percentage::after {
+    width:50%;
+}
+.skill-list li:nth-of-type(6) .skill-percentage::before {
+    left: 50%;
+}
+.skill-list li:nth-of-type(7) .skill-percentage::after {
+    width: 35%;
+}
+.skill-list li:nth-of-type(7) .skill-percentage::before {
+    left: 35%;
+}
+.skill-list li:nth-of-type(8) .skill-percentage::after {
+    width: 45%;
+}
+.skill-list li:nth-of-type(8) .skill-percentage::before {
+    left: 45%;
+}
 .skill-level {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     opacity: 0;
     transition: all .3s ease-in-out;
+}
+.skill-level p {
+    flex: 0 1 25%;
+    text-align: right;
 }
 .skill-list li:hover .skill-percentage::before {
     opacity: 1;
@@ -299,7 +352,7 @@ a {
         width: 0;
     }
     100% {
-        width: 50%;
+
     }
 }
 .skill-introduction {
