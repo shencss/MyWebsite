@@ -473,7 +473,7 @@
                             <li>nextSibling、chlidNodes等DOM API容易取到空白的text节点</li>
                             <li>浏览器为了提高用户访问同一页面的速度，会对页面数据进行缓存。当url请求地址不变时，有时候会导致浏览器不发送请求，直接从缓存中读取之前的数据。如果数据改变了，而没加随机数，读取的数据会跟之前一样。加上随机数或时间戳，就是欺骗浏览器url改变了，会每次都向服务器发送请求而不去读缓存</li>
                             <li>BOM结构：图略</li>
-                            <li>document.documentElement.scrollHeight、scrollWidth获取页面的大小，document.documentElement.clientHeight、clientWidth获取可视区域的大小，el.offsetHeight、offsetWidth获取元素的大小</li>
+                            <li>(document.documentElement或document.body)scrollHeight、scrollWidth获取页面的大小，clientHeight、clientWidth获取可视区域的大小，scrollTop获取滚动大小，el.offsetHeight、offsetWidth获取元素的大小（在chrome中document.body.scrollTop一直为0）</li>
                             <li>getBoundingClientRect用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。</li>
                             <li>let声明的变量只在所在的代码块（块级作用域）里有效，形成TDZ，只能从声明开始之后的地方使用</li>
                             <li>Const 声明的变量同样只在块级作用域中有效，但是值无法改变且必须立即初始化。Const存复合类型只是所存储的地址不变</li>
@@ -966,7 +966,7 @@
                         <ul class="collection-blog-list">
                             <li>
                                 <a href="http://www.w3cplus.com/front-end-trip-on-road.html" target="_blank" class="blog-item">
-                                    <p>前端路上的旅行</p>
+                                    前端路上的旅行
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -982,7 +982,7 @@
                             </li>
                             <li>
                                 <a href="https://github.com/qiu-deqing/FE-learning" target="_blank" class="blog-item">
-                                    <p>结合个人经历总结的前端入门方法</p>
+                                    结合个人经历总结的前端入门方法
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -999,7 +999,7 @@
                             </li> 
                             <li>
                                 <a href="https://blog.csdn.net/clh604/article/details/22179907" target="_blank" class="blog-item">
-                                    <p>https原理：证书传递、验证和数据加密、解密过程解析</p>
+                                    https原理：证书传递、验证和数据加密、解密过程解析
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -1012,7 +1012,7 @@
                             </li>  
                             <li>
                                 <a href="https://blog.csdn.net/wall1999/article/details/55100942" target="_blank" class="blog-item">
-                                    <p>前端开发常用API合集</p>
+                                    前端开发常用API合集
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -1026,7 +1026,7 @@
                             </li>   
                             <li>
                                 <a href="https://blog.csdn.net/qq_17004327/article/details/78264763" target="_blank" class="blog-item">
-                                    <p>div+background-image和img标签的选择</p>
+                                    div+background-image和img标签的选择
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -1041,7 +1041,7 @@
                             </li> 
                             <li>
                                 <a href="https://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank" class="blog-item">
-                                    <p>CSS深入理解vertical-align和line-height的基友关系</p>
+                                    CSS深入理解vertical-align和line-height的基友关系
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -1056,7 +1056,7 @@
                             </li> 
                             <li>
                                 <a href="https://www.cnblogs.com/2010master/p/5824215.html" target="_blank" class="blog-item">
-                                    <p>javascript中BOM部分基础知识总结</p>
+                                    javascript中BOM部分基础知识总结
                                     <img src="icons/arrow-icon.png" alt="">
                                 </a>
                                 <div class="blog-item-introduction">
@@ -1168,7 +1168,7 @@
                         <div class="mail-flag"></div>
                     </div>
                 </div>
-                <div class="mail-address">
+                <div class="email-address">
                     <p>EMAIL:</p>
                     <h2>820344779@qq.com</p>
                 </div>

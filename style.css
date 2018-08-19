@@ -263,8 +263,7 @@ a {
     height: 100%;
     width: 0;
     background: linear-gradient(to right, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
-    animation:  1s 1.5s ease-in both;
-    animation-name: percentage-load;
+    animation: percentage-load  1s ease-in both;
 }
 .skill-percentage::before {
     content: attr(data-percentage);
@@ -873,6 +872,9 @@ a {
 .collection-blog-list > li:last-of-type {
     border-bottom: none;
 }
+.collection-blog-list > li:hover .blog-item {
+    text-decoration: underline;
+}
 .collection-blog-list > li:hover .blog-item img {
     transform: rotate(90deg);
 }
@@ -882,7 +884,8 @@ a {
     height: 40px;
     line-height: 40px;
     width: 100%;
-    padding: 0 20px;  
+    padding: 0 20px;
+    text-align: start;
 }
 .collection-blog-list > li .blog-item  p {
     float: left;
@@ -1324,7 +1327,8 @@ a {
     height: 40px;
     border-radius: 15px 15px 0 0;
     background-color: rgb(34,125,170);
-    animation: mail-in .5s .2s ease-in-out both;
+    animation: mail-in .5s .5s ease-in-out both;
+    display: none;
 }
 .mail-box::before {
     content: '';
@@ -1354,9 +1358,8 @@ a {
     height: 32px;
     background-color: #F56262;
     z-index: 2;
-    animation: flag-in .3s .7s ease-in-out both;
+    animation: flag-in .3s 1s ease-in-out both;
     transform-origin: 50% 100%;
-    opacity: 0;
 }
 .mail-box .mail-flag::before {
     content: '';
@@ -1378,12 +1381,13 @@ a {
     height: 12px;
     background-color: #F56262;
 }
-.mail-address, .github-address {
+.email-address, .github-address {
     float: left;
     margin: 0 40px;
     flex: 0 1 auto;
+    opacity: 0;
 }
-.mail-address p, .github-address p {
+.email-address p, .github-address p {
     font-size: 12px;
     color: #AAC7D9;
     margin-bottom: 5px;
@@ -1405,12 +1409,21 @@ a {
         opacity: 0;
     }
     100% {
-        
+        opacity: 1;
     }
 }
 @keyframes flag-in {
     0% {
         transform: rotateZ(-90deg);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes address-in {
+    0% {
+        opacity: 0;
     }
     100% {
         opacity: 1;
