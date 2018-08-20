@@ -4,7 +4,6 @@
     box-sizing: border-box;
     letter-spacing: 1px;
 }
-/*** 滚动条 ***/
 
 /*** 通用样式 ***/
 .block {
@@ -25,6 +24,11 @@
     float: left;
     width: 20%;
 }
+.icon i {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
 .icon-text {
     position: relative;
     margin-bottom: 20px;
@@ -37,10 +41,6 @@
     left: 0;
     width: 50px;
     height: 4px;
-}
-.icon-img {
-    width: 50px;
-    height: 50px;
 }
 ul li {
     list-style: none;
@@ -60,6 +60,7 @@ a {
     display: none;
     cursor: pointer;
 }
+
 /*** NAV ***/ 
 .nav {
     position: fixed;
@@ -190,6 +191,9 @@ a {
 .about .icon-text::after {
     background-color: rgb(34, 125, 170);
 }
+.icon-about {
+    background: url('icons/icons-sprites.png') -310px -10px;
+}
 .information {
     color: #58798C;
 }
@@ -202,9 +206,11 @@ a {
     color: #FFF;
     background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
 }
-
 .experience .icon-text::after {
     background-color: #FFF;
+}
+.icon-experience {
+    background: url('icons/icons-sprites.png') -310px -150px;
 }
 .experience-list li {
     padding: 20px;
@@ -218,12 +224,10 @@ a {
 .experience-list li:hover {
     background-color: rgba(255, 255, 255, .1);
 }
-.experience-name img {
+.experience-name a {
     display: inline-block;
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+    width: 20px; height: 20px;
+    background: url('icons/icons-sprites.png') -450px -357px;
 }
 .experience-time {
     margin: 10px 0;
@@ -240,6 +244,9 @@ a {
 }
 .skillset .icon-text::after {
     background-color: rgb(34, 125, 170);
+}
+.icon-skillset {
+    background: url('icons/icons-sprites.png') -380px -150px;
 }
 .skill-list {
     float: left;
@@ -289,8 +296,7 @@ a {
     color: #FFF;
     font-size: 12px;
     border-radius: 50%;
-    background: url(icons/bubble-icon.png) no-repeat;
-    background-size: 100% 100%;
+    background: url('icons/icons-sprites.png') -450px -212px;;
     transition: all .3s ease-in-out;
     opacity: 0;
 }
@@ -403,6 +409,9 @@ a {
 .education .icon-text::after {
     background-color: #FFF;
 }
+.icon-education {
+    background: url('icons/icons-sprites.png') -150px -310px;
+}
 .education-time {
     color: #AAC7D9;
 }
@@ -423,6 +432,9 @@ a {
 }
 .works .icon-text::after {
     background-color: rgb(34, 125, 170);
+}
+.icon-works {
+    background: url('icons/icons-sprites.png') -220px -310px;
 }
 .work-list {
     display: flex;
@@ -457,11 +469,12 @@ a {
     display: block;
     font-weight: bold;
 }
-.work-name img {
+.work-name a {
     display: inline-block;
     margin-left: 3px;
     width: 15px;
     height: 15px;
+    background: url('icons/icons-sprites.png') -450px -397px;
     cursor: pointer;
 }
 .work-information hr {
@@ -494,6 +507,9 @@ a {
 }
 .notes .icon-text::after {
     background-color: #FFF;
+}
+.icon-notes {
+    background: url('icons/icons-sprites.png') -380px -10px;
 }
 .note-list {
     display: flex;
@@ -610,7 +626,7 @@ a {
     font-size: 12px;
     color: #AAC7D9;
 }
-.note-header div {
+.note-header i {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -619,21 +635,17 @@ a {
     cursor: pointer;
 }
 /** 设置各自颜色的按钮 **/
-.note-list > li:nth-of-type(1) .note-header div {
-    background: url(icons/close-icon-css.png) no-repeat;
-    background-size:  100% 100%;
+.note-list > li:nth-of-type(1) .note-header i {
+    background: url('icons/icons-sprites.png') -450px -162px;
 }
-.note-list > li:nth-of-type(2) .note-header div {
-    background: url(icons/close-icon-js.png) no-repeat;
-    background-size:  100% 100%;
+.note-list > li:nth-of-type(2) .note-header i {
+    background: url('icons/icons-sprites.png') -450px -262px;
 }
-.note-list > li:nth-of-type(3) .note-header div {
-    background: url(icons/close-icon-jq.png) no-repeat;
-    background-size:  100% 100%;
+.note-list > li:nth-of-type(3) .note-header i {
+    background: url('icons/icons-sprites.png') -450px -112px;
 }
-.note-list > li:nth-of-type(4) .note-header div {
-    background: url(icons/close-icon-react.png) no-repeat;
-    background-size:  100% 100%;
+.note-list > li:nth-of-type(4) .note-header i {
+    background: url('icons/icons-sprites.png') -450px -62px;
 }
 .note-content {
     float: right;
@@ -693,6 +705,9 @@ a {
 }
 .collections .icon-text::after {
     background-color: rgb(34, 125, 170);
+}
+.icon-collections {
+    background: url('icons/icons-sprites.png') -310px -220px;
 }
 .collection-list {
     position: relative;
@@ -804,11 +819,53 @@ a {
     width: 100%;
     text-align: center;
 }
-.collection-content .collection-website-list li a img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+.collection-content .collection-website-list li a span {
+    display: inline-block;
     vertical-align: middle;
+    line-height: 32px;
+}
+.collection-content .collection-website-list li a i {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+/** 设置各个网站icon **/
+.icon-gh {
+    background: url('icons/icons-sprites.png') -374px -380px;
+}
+.icon-fcc {
+    background: url('icons/icons-sprites.png') -166px -380px;
+}
+.icon-cp {
+    background: url('icons/icons-sprites.png') -270px -380px;
+}
+.icon-if {
+    background: url('icons/icons-sprites.png') -380px -220px;
+}
+.icon-so {
+    background: url('icons/icons-sprites.png') -10px -380px;
+}
+.icon-sf {
+    background: url('icons/icons-sprites.png') -62px -380px;
+}
+.icon-nkw {
+    background: url('icons/icons-sprites.png') -114px -380px;
+}
+.icon-wg {
+    background: url('icons/icons-sprites.png') -380px -324px;
+}
+.icon-tt {
+    background: url('icons/icons-sprites.png') -218px -380px;
+}
+.icon-rb {
+    background: url('icons/icons-sprites.png') -450px -10px;
+}
+.icon-js {
+    background: url('icons/icons-sprites.png') -380px -272px;
+}
+.icon-react {
+    background: url('icons/icons-sprites.png') -322px -380px;
 }
 .collection-content .collection-website-list li a hr {
     border: none;
@@ -886,7 +943,7 @@ a {
 .collection-blog-list > li:hover .blog-item {
     text-decoration: underline;
 }
-.collection-blog-list > li:hover .blog-item img {
+.collection-blog-list > li:hover .blog-item i {
     transform: rotate(90deg);
 }
 .collection-blog-list > li .blog-item {
@@ -901,11 +958,12 @@ a {
 .collection-blog-list > li .blog-item  p {
     float: left;
 }
-.collection-blog-list > li .blog-item img {
+.collection-blog-list > li .blog-item i {
     float: right;
     height:25px;
     width: 25px;
     margin-top: 7.5px;
+    background: url('icons/icons-sprites.png') -450px -312px;
     transition: all .2s linear;
 }
 .collection-blog-list > li .blog-item-introduction {
@@ -1183,20 +1241,32 @@ a {
     padding: 10px;
     font-size: 12px;
 }
-.public-account-list li > img {
+.public-account-list li > i {
+    display: block;
     width:50px;
     height: 50px;
-    border-radius: 5px;
     cursor: pointer;
 }
-.public-account-list li > img:hover + .qr-code {
+.icon-infoq {
+    background: url('icons/icons-sprites.png') -380px -80px;
+}
+.icon-cxytt {
+    background: url('icons/icons-sprites.png') -290px -310px;
+}
+.icon-qddq {
+    background: url('icons/icons-sprites.png') -80px -310px;
+}
+.icon-qdkf {
+    background: url('icons/icons-sprites.png') -310px -80px;
+}
+.public-account-list li > i:hover + .qr-code {
     display: block;
 }
 .public-account-list li .qr-code{
     position: absolute;
     top: 80px;
-    left: 50%;
-    margin-left: -75px;
+    left: 0;
+    margin-left: -40px;
     width: 150px;
     height: 150px;
     padding: 10px;
@@ -1217,16 +1287,22 @@ a {
     border-bottom: 15px solid #AAC7D9;
     border-right: 15px solid transparent;  
 }
-.public-account-list li .qr-code img {
+.public-account-list li .qr-code i {
+    display: block;
     width:130px;
     height: 130px;
 }
-.public-account-list li .color {
-    width:40px;
-    height: 40px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background-color: #000;
+.icon-infoq-code {
+    background: url('icons/icons-sprites.png') -160px -160px;
+}
+.icon-cxytt-code {
+    background: url('icons/icons-sprites.png') -10px -160px;
+}
+.icon-qddq-code {
+    background: url('icons/icons-sprites.png') -160px -10px;
+}
+.icon-qdkf-code {
+    background: url('icons/icons-sprites.png') -10px -10px;
 }
 /*** CSS Color ***/
 .css-color-list li {
@@ -1314,6 +1390,9 @@ a {
 }
 .contact .icon-text::after {
     background-color: #FFF;
+}
+.icon-contact {
+    background: url('icons/icons-sprites.png') -10px -310px;
 }
 .mail {
     display: flex;
