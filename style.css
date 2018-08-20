@@ -87,6 +87,7 @@ a {
     font-size: 25px;
     cursor: pointer;
     position: relative;
+    color: #FFF;
 }
 .nav .title::after {
     content: '';
