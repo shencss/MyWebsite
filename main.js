@@ -15,8 +15,6 @@ const skillList = document.querySelector('.skill-list');
 //SKILLSET中的技能条
 const percentages =  document.getElementsByClassName('skill-percentage');
 
-//CONTACT中的邮箱背景
-const mailBoxBg = document.querySelector('.mail-box-bg');
 //CONTACT中的邮箱
 const mailBox = document.querySelector('.mail-box');
 //CONTACT中的email及github地址
@@ -157,14 +155,6 @@ function handleOnBlockFadeIn() {
         addCSSFadeIn(blocks[i]);
     }
 
-    //滚动到CONTACT的mail-box-bg底部时将mail-box呈现出来，而它及它的伪类会执行动画
-    //同时为两个address添加动画
-    if(isElementBottomInViewport(mailBoxBg)) {
-        mailBox.style.display = 'block';
-        emailAddress.style.animation = 'address-in .5s 1s ease-in-out both';
-        githubAddress.style.animation = 'address-in .5s 1s ease-in-out both';
-    } 
-
     //滚动到SKILLSET的skill-list底部时将percentage呈现出来，而它的伪类会执行动画
     if(isElementBottomInViewport(skillList)) {
         for(let j = 0, len = percentages.length; j < len; j++) {
@@ -176,6 +166,11 @@ function handleOnBlockFadeIn() {
     pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;//重新取一次值
     if(!hasReachBottom && (scrollHeightNow + clientHeight == pageHeight)) {
         hasReachBottom = true;
+
+        //滚动到底部时将mail-box呈现出来，而它及它的伪类会执行动画
+        mailBox.style.display = 'block';
+        emailAddress.style.animation = 'address-in .5s 1s ease-in-out both';
+        githubAddress.style.animation = 'address-in .5s 1s ease-in-out both';
     }  
 }
 
