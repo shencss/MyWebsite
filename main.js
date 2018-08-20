@@ -1,69 +1,131 @@
-const blogList = document.getElementsByClassName('collection-blog-list')[0];
-
-for(let i = 0, len = blogList.children.length; i < len; i++) {
-    const e = blogList.children[i];
-    e.addEventListener('mouseenter', () => {
-        //使用children而不要使用chlidNodes
-        const itemCount = e.children[1].children[1].children.length;
-        e.children[1].style.height = itemCount * 20 + 10 + 'px';
-    }, false);
-    e.addEventListener('mouseleave', () => {
-        e.children[1].style.height = '0px';
-    }, false);
-}
-/*
-let percentage = 0;
-const skillPercentage = document.getElementById('test');
-const loadPercentage = () => {
-    clockTimeId = setTimeout(function start() {
-        skillPercentage.setAttribute('data-percentage', +percentage);
-        percentage++;
-        clockTimeId = setTimeout(start, 1000);
-    }, 1000);
-}
-loadPercentage();
-
-*/
 //获取DOM元素
+//导航条
 const nav = document.querySelector('.nav');
-const header = document.querySelector('.header');
-const about = document.querySelector('.about');
-const experience = document.querySelector('.experience');
-const skillset = document.querySelector('.skillset');
-const education = document.querySelector('.education');
-const works = document.querySelector('.works');
-const notes = document.querySelector('.notes');
-const collections = document.querySelector('.collections');
-const contact = document.querySelector('.contact');
+//导航列表
+const navList = document.querySelector('.nav-list');
+//各个板块
+const blocks = document.getElementsByClassName('block');
+//遮罩
+const cover = document.querySelector('.cover');
+//header中的introduction元素
+const introduction = document.querySelector('.introduction');
 
+//SKILLSET中的技能列表
+const skillList = document.querySelector('.skill-list');
+//SKILLSET中的技能条
+const percentages =  document.getElementsByClassName('skill-percentage');
 
+//CONTACT中的邮箱背景
+const mailBoxBg = document.querySelector('.mail-box-bg');
+//CONTACT中的邮箱
+const mailBox = document.querySelector('.mail-box');
+//CONTACT中的email及github地址
+const emailAddress = document.querySelector('.email-address');
+const githubAddress = document.querySelector('.github-address');
+
+//NOTES中的details按钮
+const detailBtns = document.getElementsByClassName('detail-btn');
+//NOTES中的details页面
+const noteDetails = document.getElementsByClassName('note-details');
+//NOTES中的details页面的关闭按钮
+const closeBtns = document.getElementsByClassName('close-btn');
+
+//BLOGS中的收藏列表
+const blogList = document.querySelector('.collection-blog-list');
+//BLOGS中收藏列表每一项的blog-item-introduction
+const blogIntroductions = document.getElementsByClassName('blog-item-introduction');
+
+//设置变量
+//页面高度
+let pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+//浏览器高度
+const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+//导航条高度
 const navHeight = nav.offsetHeight;
+
+//上一次滚动到的高度
+let scrollHeightPre = 0;
+//当前滚动到的高度
 let scrollHeightNow =  document.documentElement.scrollTop || document.body.scrollTop; 
 
+//标记当前导航到哪个Nav
+let selecetedNav = 0;
 
-//如果滚动超过导航条高度则导航条缩小
-function handleOnNavSilde() {
-    let scrollHeightNext =  document.documentElement.scrollTop || document.body.scrollTop; 
+//标记是否滚动到过底部
+let hasReachBottom = false;
+
+
+//在滚动的时候控制滚动条的响应：1.伸缩 2.定位
+function handleOnNavReact() {
     //showNav布尔值是为了减少DOM操作
     let showNav = true;
-    //如果滚动高度超过Nav高度
+
+    //保存上次滚动到的高度
+    scrollHeightPre = scrollHeightNow;
+    //取得当前滚动的高度
+    scrollHeightNow =  document.documentElement.scrollTop || document.body.scrollTop; 
+
+    //只有当滚动高度超过Nav高度且在向下滚动时才缩小导航条
     if(scrollHeightNow > navHeight) {
-        //如果向上滚动
-        if(scrollHeightNext < scrollHeightNow) {
-            showNav = true;
-        } else {
+        //当前高度大于上次的高度
+        if(scrollHeightNow > scrollHeightPre) {
             showNav = false;
-        } 
-    } else {
-        showNav = true;   
+        }
+    } 
+
+    nav.style.height = showNav ? '70px' : '5px';
+
+    for(let i = 0, len = navList.children.length; i < len; i++) {
+        if(i < len - 1) {
+            //当前板块的顶部到达可视区域中间且下一个板块的顶部还没到达可视区域中间，则导航位置为当前板块
+            if(blocks[i].getBoundingClientRect().top <= clientHeight / 2 && blocks[i + 1].getBoundingClientRect().top > clientHeight / 2) {
+                selecetedNav = i;
+            }
+        }
+
+        //到达底部则导航位置为CONTACT板块
+        pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;//由于fadein动画，页面高度在动画执行过程中会变化，这里重新取一次值
+        if(scrollHeightNow + clientHeight == pageHeight) {
+            selecetedNav = len - 1;
+        }
+
+        //为当前导航的nav添加nav-selected类，使之出现下划线
+        if(i == selecetedNav) {
+            navList.children[i].classList.add('nav-selected');
+        } else {
+            navList.children[i].classList.remove('nav-selected');
+        }
     }
-    if(!showNav) {
-        nav.style.height = '5px';
-    } else {
-        nav.style.height = '70px';
-    }  
-    scrollHeightNow = scrollHeightNext
 } 
+
+//鼠标进入导航条则删除nav-selected类，鼠标离开后再恢复
+navList.addEventListener('mouseover', () => {
+    navList.children[selecetedNav].classList.remove('nav-selected')
+});
+navList.addEventListener('mouseleave', () => {
+    navList.children[selecetedNav].classList.add('nav-selected');   
+});
+
+//导航菜单点击定位
+for(let i = 0, len = navList.children.length; i < len; i++) {
+    navList.children[i].addEventListener('click', () => {
+        let topToScroll = 0;
+        //如果block比可视区域小就居中显示，否则就顶部显示（这里的5是指导航条缩小后的高度）
+        if(blocks[i].offsetHeight < clientHeight) {
+            topToScroll = blocks[i].offsetTop - (clientHeight - blocks[i].offsetHeight) / 2 - 5;
+        } else {
+            topToScroll = blocks[i].offsetTop - 5;
+        }
+
+        //点击后设置相应的导航位置
+        selecetedNav = i;
+
+        //滚动到该位置
+        window.scrollTo(0, topToScroll);
+    });
+}
+
+
 
 //判断元素顶部是否进入可视区域
 function isElementTopInViewport(el) {
@@ -82,29 +144,19 @@ function addCSSFadeIn(el) {
         el.classList.add('fade-in');
     }
 }
-//为introduction及所有block执行addCSSFadeIn函数
-let hasReachBottom = false;
-//页面高度
-const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-//浏览器高度
-const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-const blocks = document.getElementsByClassName('block');
-const introduction = document.querySelector('.introduction');
-const skillList = document.querySelector('.skill-list');
-const percentages =  document.getElementsByClassName('skill-percentage');
-const mailBoxBg = document.querySelector('.mail-box-bg');
-const mailBox = document.querySelector('.mail-box');
-const emailAddress = document.querySelector('.email-address');
-const githubAddress = document.querySelector('.github-address');
-function handleOnElementFadeIn() {
+
+function handleOnBlockFadeIn() {
     //滚到到底部之后便结束
     if(hasReachBottom) return;
+
     //单独为introduction添加fadein特效
     addCSSFadeIn(introduction); 
-    //len - 1是因为contact部分不需要fadein特效
+
+    //为除了CONTACT以外的板块添加fadein特效
     for(let i = 0, len = blocks.length; i < len - 1; i++) {
         addCSSFadeIn(blocks[i]);
     }
+
     //滚动到CONTACT的mail-box-bg底部时将mail-box呈现出来，而它及它的伪类会执行动画
     //同时为两个address添加动画
     if(isElementBottomInViewport(mailBoxBg)) {
@@ -112,33 +164,31 @@ function handleOnElementFadeIn() {
         emailAddress.style.animation = 'address-in .5s 1s ease-in-out both';
         githubAddress.style.animation = 'address-in .5s 1s ease-in-out both';
     } 
+
     //滚动到SKILLSET的skill-list底部时将percentage呈现出来，而它的伪类会执行动画
     if(isElementBottomInViewport(skillList)) {
         for(let j = 0, len = percentages.length; j < len; j++) {
             percentages[j].style.display = 'block';
         }
     }  
+    
     //scrollHeightNow + clientHeight = pageHeight时即滚动到底部，不再执行重复无效的代码
+    pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;//重新取一次值
     if(!hasReachBottom && (scrollHeightNow + clientHeight == pageHeight)) {
         hasReachBottom = true;
     }  
 }
 
-window.addEventListener('scroll', handleOnNavSilde);
-window.addEventListener('load', handleOnElementFadeIn);
-window.addEventListener('scroll', handleOnElementFadeIn);
+
 
 //在NOTES部分点击Details按钮，则呈现笔记
-const detailBtns = document.getElementsByClassName('detail-btn');
-const noteDetails = document.getElementsByClassName('note-details');
-const closeBtns = document.getElementsByClassName('close-btn');
-const cover = document.querySelector('.cover');
 for(let i = 0, len = detailBtns.length; i < len; i++) {
     detailBtns[i].addEventListener('click', () => {
         cover.style.display = 'block';
         noteDetails[i].style.display = 'block';
         //animation使得note-detail渐变进入
         noteDetails[i].style.animation = 'detail-fade-in .5s linear both';
+
         //点击遮罩或关闭按钮则关闭
         cover.addEventListener('click', () => {
             noteDetails[i].style.display = 'none';
@@ -150,3 +200,27 @@ for(let i = 0, len = detailBtns.length; i < len; i++) {
         });
     });
 }
+
+
+
+//动态获取blogList部分各自item-introduction长度，实现slide-down特效
+for(let i = 0, len = blogList.children.length; i < len; i++) {
+    let itemCount = 0;
+    //使用children而不要使用chlidNodes
+    blogList.children[i].addEventListener('mouseenter', () => {
+        //获取item-introduction中列表的项数
+        itemCount = blogIntroductions[i].children[1].children.length;
+        blogIntroductions[i].style.height = itemCount * 20 + 10 + 'px';
+    }, false);
+    blogList.children[i].addEventListener('mouseleave', () => {
+        blogIntroductions[i].style.height = '0px';
+    }, false);
+}
+
+
+
+//监听load和scroll事件
+window.addEventListener('scroll', handleOnNavReact);
+window.addEventListener('load', handleOnNavReact);
+window.addEventListener('load', handleOnBlockFadeIn);
+window.addEventListener('scroll', handleOnBlockFadeIn);

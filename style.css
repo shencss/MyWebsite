@@ -67,7 +67,6 @@ a {
     left: 0;
     width: 100%;
     height: 70px;
-    padding: 0 60px;
     background-color: rgb(34, 125, 170);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, .2);
     line-height: 70px;
@@ -75,8 +74,11 @@ a {
     font-weight: bold;
     z-index: 9;
     color: #FFF;
-    transition: all .5s .2s linear;
+    transition: all .5s .3s ease-in-out;
     overflow: hidden;
+}
+.nav:hover {
+    height: 70px !important; /* 悬停一定是70px */
 }
 .nav .title {
     float: left;
@@ -100,7 +102,7 @@ a {
 .nav .title:hover::after {
     opacity: 1;
 }
-.nav .nav-list {
+.nav-list {
     display: flex;
     float: right;
     justify-content: center;
@@ -108,13 +110,13 @@ a {
     width: 65%;
     text-align: center;
 }
-.nav .nav-list li {
+.nav-list li {
     position: relative;
     flex: 1 1 auto;
     float: left;
     cursor: pointer;
 }
-.nav .nav-list li::after {
+.nav-list li::after {
     content: '';
     position: absolute;
     bottom: 10px;
@@ -124,14 +126,22 @@ a {
     border-bottom: 3px solid #FFF;
     transition: all .2s .1s linear;
 }
-.nav .nav-list li:hover::after {
+.nav-list li:hover::after {
     left: 0;
     width: 100%;
 }
-.nav .nav-list li:hover ~ li::after {
+.nav-list li:hover ~ li::after {
     left: 0;
 }
-
+.nav-list .nav-selected::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #FFF;
+}
 /*** HEADER **/
 .header {
     position: relative;
