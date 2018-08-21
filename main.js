@@ -269,7 +269,7 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
 
 
 
-
+handleOnBlockFadeIn();
 //监听load和scroll事件
 window.addEventListener('scroll', handleOnNavReact);
 window.addEventListener('load', handleOnNavReact);
