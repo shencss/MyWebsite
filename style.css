@@ -514,11 +514,9 @@ a {
     width: 50px;
     height: 50px;
     margin: 0 auto;
-    background: url('icons/icon-more.png') -380px -220px;
+    background: url('icons/icons-sprites.png') -380px -220px;
     cursor: pointer;
-}
-.work-rest:hover {
-    animation: more-repeat 1s linear infinite both;
+    animation: more-repeat 1.5s linear infinite both;
 }
 @keyframes more-repeat {
     0% {

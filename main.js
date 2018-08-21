@@ -1,4 +1,4 @@
-//获取DOM元素
+//DOM元素
 //导航条
 const nav = document.querySelector('.nav');
 //导航列表
@@ -19,6 +19,8 @@ const percentages =  document.getElementsByClassName('skill-percentage');
 const moreBtn = document.querySelector('.work-rest');
 //WORKS中的作品列表
 const workList = document.querySelector('.work-list');
+//WORKS中的所有图片
+const worksImgs = document.getElementsByClassName('work-img');
 
 //NOTES中的details按钮
 const detailBtns = document.getElementsByClassName('detail-btn');
@@ -26,6 +28,11 @@ const detailBtns = document.getElementsByClassName('detail-btn');
 const noteDetails = document.getElementsByClassName('note-details');
 //NOTES中的details页面的关闭按钮
 const closeBtns = document.getElementsByClassName('close-btn');
+//NOTES中的所有图片
+const notesImgs = document.getElementsByClassName('note-img');
+
+//COLLECTIONS中的所有图片
+const colletcionsImgs = document.getElementsByClassName('collection-img');
 
 //BLOGS中的收藏列表
 const blogList = document.querySelector('.collection-blog-list');
@@ -38,7 +45,7 @@ const mailBox = document.querySelector('.mail-box');
 const emailAddress = document.querySelector('.email-address');
 const githubAddress = document.querySelector('.github-address');
 
-//设置变量
+//变量
 //页面高度
 let pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
 //浏览器高度
@@ -60,7 +67,7 @@ let hasReachBottom = false;
 //标记板块是否已经进入过窗口
 const hasBlockInViewport = [false, false, false, false, false, false, false, false];
 
-//标记显示的work数目
+//标记显示中的work数目
 let worksOnShow = 6;
 
 
@@ -147,13 +154,12 @@ function isElementBottomInViewport(el) {
 }
 
 
-const worksImgs = document.getElementsByClassName('work-img');
-const notesImgs = document.getElementsByClassName('note-img');
-const colletcionsImgs = document.getElementsByClassName('collection-img');
+
 
 //图片懒加载
 function lazyLoad(imgs) {
     for(let i = 0, len = imgs.length; i < len; i++) {
+        //从data-src自定义属性中取出URL然后加载图片
         if(imgs[i].getAttribute('data-src')) {
             imgs[i].src = imgs[i].getAttribute('data-src');
         }
@@ -172,21 +178,26 @@ function handleOnBlockFadeIn() {
 
     //为除了CONTACT以外的板块添加fadein特效
     for(let i = 0, len = blocks.length; i < len - 1; i++) {
+        //当前板块还未fadein过且板块顶部进入可视区域
         if(!hasBlockInViewport[i] && isElementTopInViewport(blocks[i])) {
             //为当前板块添加fadein类
             blocks[i].classList.add('fade-in');
 
-            //当滚动到WORKS部分，懒加载最初的6个work的图片
+            //当滚动到WORKS部分，懒加载最初的6个work的图片，其他图片点击按钮才会加载
             if(i == 4) {
                 lazyLoad(Array.prototype.slice.call(worksImgs, 0, 6));
             }
+            
             //但滚动到NOTES部分， 懒加载四张note的图片
             if(i == 5) {      
                 lazyLoad(notesImgs);
-            }//当滚动到COLLECTIONS部分，懒加载8本图书的封面图片
+            }
+            
+            //当滚动到COLLECTIONS部分，懒加载8本图书的封面图片
             if(i == 6) {
                 lazyLoad(colletcionsImgs);
             }
+
             //标记当前板块已经fadein
             hasBlockInViewport[i] = true;
         }
@@ -217,13 +228,14 @@ moreBtn.addEventListener('click', () => {
     if(worksOnShow + 3 <= workList.children.length) {
         //每次点击懒加载3张图片
         lazyLoad(Array.prototype.slice.call(worksImgs, worksOnShow, worksOnShow + 3));
+        //逐一将work呈现出来
         for(let i = 0; i < 3; i++) { 
-            //逐一将work呈现出来
             workList.children[worksOnShow].style.display = 'block';
             worksOnShow++;
         }
+
+        //全部显示之后不再显示按钮
         if(worksOnShow == workList.children.length) {
-            //全部显示之后不再显示按钮
             moreBtn.style.display = 'none';
         }
     } 
@@ -267,12 +279,8 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
 }
 
 
-
-
-handleOnBlockFadeIn();
 //监听load和scroll事件
-window.addEventListener('scroll', handleOnNavReact);
 window.addEventListener('load', handleOnNavReact);
+window.addEventListener('scroll', handleOnNavReact);
 window.addEventListener('load', handleOnBlockFadeIn);
 window.addEventListener('scroll', handleOnBlockFadeIn);
-window.addEventListener('scroll', lazyLoad);
