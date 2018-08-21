@@ -57,6 +57,9 @@ let selecetedNav = 0;
 //标记是否滚动到过底部
 let hasReachBottom = false;
 
+//标记板块是否已经进入过窗口
+const hasBlockInViewport = [false, false, false, false, false, false, false, false];
+
 //标记显示的work数目
 let worksOnShow = 6;
 
@@ -143,23 +146,50 @@ function isElementBottomInViewport(el) {
     return rect.bottom < (window.innerHight || document.documentElement.clientHeight); 
 }
 
-//如果元素进入顶部进入可是区域则通过fade-in类形成fadeIn特效
-function addCSSFadeIn(el) {
-    if(isElementTopInViewport(el)) {
-        el.classList.add('fade-in');
+
+const worksImgs = document.getElementsByClassName('work-img');
+const notesImgs = document.getElementsByClassName('note-img');
+const colletcionsImgs = document.getElementsByClassName('collection-img');
+
+//图片懒加载
+function lazyLoad(imgs) {
+    for(let i = 0, len = imgs.length; i < len; i++) {
+        if(imgs[i].getAttribute('data-src')) {
+            imgs[i].src = imgs[i].getAttribute('data-src');
+        }
     }
 }
+
 
 function handleOnBlockFadeIn() {
     //滚到到底部之后便结束
     if(hasReachBottom) return;
 
     //单独为introduction添加fadein特效
-    addCSSFadeIn(introduction); 
+    if(isElementTopInViewport(introduction)) {
+        introduction.classList.add('fade-in');
+    }
 
     //为除了CONTACT以外的板块添加fadein特效
     for(let i = 0, len = blocks.length; i < len - 1; i++) {
-        addCSSFadeIn(blocks[i]);
+        if(!hasBlockInViewport[i] && isElementTopInViewport(blocks[i])) {
+            //为当前板块添加fadein类
+            blocks[i].classList.add('fade-in');
+
+            //当滚动到WORKS部分，懒加载最初的6个work的图片
+            if(i == 4) {
+                lazyLoad(Array.prototype.slice.call(worksImgs, 0, 6));
+            }
+            //但滚动到NOTES部分， 懒加载四张note的图片
+            if(i == 5) {      
+                lazyLoad(notesImgs);
+            }//当滚动到COLLECTIONS部分，懒加载8本图书的封面图片
+            if(i == 6) {
+                lazyLoad(colletcionsImgs);
+            }
+            //标记当前板块已经fadein
+            hasBlockInViewport[i] = true;
+        }
     }
 
     //滚动到SKILLSET的skill-list底部时将percentage呈现出来，而它的伪类会执行动画
@@ -185,7 +215,10 @@ function handleOnBlockFadeIn() {
 moreBtn.addEventListener('click', () => {
     //在没显示完之前每次多显示三个
     if(worksOnShow + 3 <= workList.children.length) {
-        for(let i = 0; i < 3; i++) {
+        //每次点击懒加载3张图片
+        lazyLoad(Array.prototype.slice.call(worksImgs, worksOnShow, worksOnShow + 3));
+        for(let i = 0; i < 3; i++) { 
+            //逐一将work呈现出来
             workList.children[worksOnShow].style.display = 'block';
             worksOnShow++;
         }
@@ -195,6 +228,7 @@ moreBtn.addEventListener('click', () => {
         }
     } 
 });
+
 
 //在NOTES部分点击Details按钮，则呈现笔记
 for(let i = 0, len = detailBtns.length; i < len; i++) {
@@ -234,8 +268,11 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
 
 
 
+
+
 //监听load和scroll事件
 window.addEventListener('scroll', handleOnNavReact);
 window.addEventListener('load', handleOnNavReact);
 window.addEventListener('load', handleOnBlockFadeIn);
 window.addEventListener('scroll', handleOnBlockFadeIn);
+window.addEventListener('scroll', lazyLoad);
