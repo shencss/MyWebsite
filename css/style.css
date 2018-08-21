@@ -192,7 +192,7 @@ a {
     background-color: rgb(34, 125, 170);
 }
 .icon-about {
-    background: url('icons/icons-sprites.png') -310px -10px;
+    background: url('../icons/icons-sprites.png') -310px -10px;
 }
 .information {
     color: #58798C;
@@ -210,7 +210,7 @@ a {
     background-color: #FFF;
 }
 .icon-experience {
-    background: url('icons/icons-sprites.png') -380px -80px;
+    background: url('../icons/icons-sprites.png') -380px -80px;
 }
 .experience-list li {
     padding: 20px;
@@ -227,7 +227,7 @@ a {
 .experience-name a {
     display: inline-block;
     width: 20px; height: 20px;
-    background: url('icons/icons-sprites.png') -55px -432px;
+    background: url('../icons/icons-sprites.png') -55px -432px;
 }
 .experience-time {
     margin: 10px 0;
@@ -246,7 +246,7 @@ a {
     background-color: rgb(34, 125, 170);
 }
 .icon-skillset {
-    background: url('icons/icons-sprites.png') -310px -150px;
+    background: url('../icons/icons-sprites.png') -310px -150px;
 }
 .skill-list {
     float: left;
@@ -296,7 +296,7 @@ a {
     color: #FFF;
     font-size: 12px;
     border-radius: 50%;
-    background: url('icons/icons-sprites.png') -450px -316px;
+    background: url('../icons/icons-sprites.png') -450px -316px;
     transition: all .3s ease-in-out;
     opacity: 0;
 }
@@ -314,10 +314,10 @@ a {
     left: 65%;
 }
 .skill-list li:nth-of-type(3) .skill-percentage::after {
-    width: 60%;
+    width: 65%;
 }
 .skill-list li:nth-of-type(3) .skill-percentage::before {
-    left: 60%;
+    left: 65%;
 }
 .skill-list li:nth-of-type(4) .skill-percentage::after {
     width: 55%;
@@ -338,16 +338,16 @@ a {
     left: 50%;
 }
 .skill-list li:nth-of-type(7) .skill-percentage::after {
-    width: 35%;
+    width: 30%;
 }
 .skill-list li:nth-of-type(7) .skill-percentage::before {
-    left: 35%;
+    left: 30%;
 }
 .skill-list li:nth-of-type(8) .skill-percentage::after {
-    width: 45%;
+    width: 40%;
 }
 .skill-list li:nth-of-type(8) .skill-percentage::before {
-    left: 45%;
+    left: 40%;
 }
 .skill-level {
     display: flex;
@@ -410,7 +410,7 @@ a {
     background-color: #FFF;
 }
 .icon-education {
-    background: url('icons/icons-sprites.png') -380px -10px;
+    background: url('../icons/icons-sprites.png') -380px -10px;
 }
 .education-time {
     color: #AAC7D9;
@@ -434,7 +434,7 @@ a {
     background-color: rgb(34, 125, 170);
 }
 .icon-works {
-    background: url('icons/icons-sprites.png') -380px -150px;
+    background: url('../icons/icons-sprites.png') -380px -150px;
 }
 .work-list {
     display: flex;
@@ -484,7 +484,7 @@ a {
     margin-left: 3px;
     width: 15px;
     height: 15px;
-    background: url('icons/icons-sprites.png') -380px -342px;
+    background: url('../icons/icons-sprites.png') -380px -342px;
     cursor: pointer;
 }
 .work-information hr {
@@ -514,7 +514,7 @@ a {
     width: 50px;
     height: 50px;
     margin: 0 auto;
-    background: url('icons/icons-sprites.png') -380px -220px;
+    background: url('../icons/icons-sprites.png') -380px -220px;
     cursor: pointer;
     animation: more-repeat 1.5s linear infinite both;
 }
@@ -563,7 +563,7 @@ a {
     background-color: #FFF;
 }
 .icon-notes {
-    background: url('icons/icons-sprites.png') -80px -310px;
+    background: url('../icons/icons-sprites.png') -80px -310px;
 }
 .note-list {
     display: flex;
@@ -690,16 +690,16 @@ a {
 }
 /** 设置各自颜色的按钮 **/
 .note-list > li:nth-of-type(1) .note-header i {
-    background: url('icons/icons-sprites.png') -450px -166px;
+    background: url('../icons/icons-sprites.png') -450px -166px;
 }
 .note-list > li:nth-of-type(2) .note-header i {
-    background: url('icons/icons-sprites.png') -450px -366px;
+    background: url('../icons/icons-sprites.png') -450px -366px;
 }
 .note-list > li:nth-of-type(3) .note-header i {
-    background: url('icons/icons-sprites.png') -450px -216px;
+    background: url('../icons/icons-sprites.png') -450px -216px;
 }
 .note-list > li:nth-of-type(4) .note-header i {
-    background: url('icons/icons-sprites.png') -450px -266px;
+    background: url('../icons/icons-sprites.png') -450px -266px;
 }
 .note-content {
     float: right;
@@ -761,7 +761,7 @@ a {
     background-color: rgb(34, 125, 170);
 }
 .icon-collections {
-    background: url('icons/icons-sprites.png') -310px -220px;
+    background: url('../icons/icons-sprites.png') -310px -220px;
 }
 .collection-list {
     position: relative;
@@ -872,6 +872,7 @@ a {
     font-weight: bold;
     width: 100%;
     text-align: center;
+    color: #58798C;
 }
 .collection-content .collection-website-list li a span {
     display: inline-block;
@@ -886,40 +887,40 @@ a {
 }
 /** 设置各个网站icon **/
 .icon-gh {
-    background: url('icons/icons-sprites.png') -380px -290px;
+    background: url('../icons/icons-sprites.png') -380px -290px;
 }
 .icon-fcc {
-    background: url('icons/icons-sprites.png') -62px -380px;
+    background: url('../icons/icons-sprites.png') -62px -380px;
 }
 .icon-cp {
-    background: url('icons/icons-sprites.png') -374px -380px;
+    background: url('../icons/icons-sprites.png') -374px -380px;
 }
 .icon-if {
-    background: url('icons/icons-sprites.png') -10px -380px;
+    background: url('../icons/icons-sprites.png') -10px -380px;
 }
 .icon-so {
-    background: url('icons/icons-sprites.png') -270px -380px;
+    background: url('../icons/icons-sprites.png') -270px -380px;
 }
 .icon-sf {
-    background: url('icons/icons-sprites.png') -450px -10px;
+    background: url('../icons/icons-sprites.png') -450px -10px;
 }
 .icon-nkw {
-    background: url('icons/icons-sprites.png') -322px -380px;
+    background: url('../icons/icons-sprites.png') -322px -380px;
 }
 .icon-wg {
-    background: url('icons/icons-sprites.png') -218px -380px;
+    background: url('../icons/icons-sprites.png') -218px -380px;
 }
 .icon-tt {
-    background: url('icons/icons-sprites.png') -114px -380px;
+    background: url('../icons/icons-sprites.png') -114px -380px;
 }
 .icon-rb {
-    background: url('icons/icons-sprites.png') -450px -114px;
+    background: url('../icons/icons-sprites.png') -450px -114px;
 }
 .icon-js {
-    background: url('icons/icons-sprites.png') -166px -380px;
+    background: url('../icons/icons-sprites.png') -166px -380px;
 }
 .icon-react {
-    background: url('icons/icons-sprites.png') -450px -62px;
+    background: url('../icons/icons-sprites.png') -450px -62px;
 }
 .collection-content .collection-website-list li a hr {
     border: none;
@@ -1017,7 +1018,7 @@ a {
     height:25px;
     width: 25px;
     margin-top: 7.5px;
-    background: url('icons/icons-sprites.png') -10px -432px;
+    background: url('../icons/icons-sprites.png') -10px -432px;
     transition: all .2s linear;
 }
 .collection-blog-list > li .blog-item-introduction {
@@ -1302,16 +1303,16 @@ a {
     cursor: pointer;
 }
 .icon-infoq {
-    background: url('icons/icons-sprites.png') -150px -310px;
+    background: url('../icons/icons-sprites.png') -150px -310px;
 }
 .icon-cxytt {
-    background: url('icons/icons-sprites.png') -290px -310px;
+    background: url('../icons/icons-sprites.png') -290px -310px;
 }
 .icon-qddq {
-    background: url('icons/icons-sprites.png') -310px -80px;
+    background: url('../icons/icons-sprites.png') -310px -80px;
 }
 .icon-qdkf {
-    background: url('icons/icons-sprites.png') -220px -310px;
+    background: url('../icons/icons-sprites.png') -220px -310px;
 }
 .public-account-list li > i:hover + .qr-code {
     display: block;
@@ -1347,16 +1348,16 @@ a {
     height: 130px;
 }
 .icon-infoq-code {
-    background: url('icons/icons-sprites.png') -160px -160px;
+    background: url('../icons/icons-sprites.png') -160px -160px;
 }
 .icon-cxytt-code {
-    background: url('icons/icons-sprites.png') -10px -160px;
+    background: url('../icons/icons-sprites.png') -10px -160px;
 }
 .icon-qddq-code {
-    background: url('icons/icons-sprites.png') -160px -10px;
+    background: url('../icons/icons-sprites.png') -160px -10px;
 }
 .icon-qdkf-code {
-    background: url('icons/icons-sprites.png') -10px -10px;
+    background: url('../icons/icons-sprites.png') -10px -10px;
 }
 /*** CSS Color ***/
 .css-color-list li {
@@ -1446,7 +1447,7 @@ a {
     background-color: #FFF;
 }
 .icon-contact {
-    background: url('icons/icons-sprites.png') -10px -310px;
+    background: url('../icons/icons-sprites.png') -10px -310px;
 }
 .mail {
     display: flex;
@@ -1471,7 +1472,7 @@ a {
     height: 40px;
     border-radius: 15px 15px 0 0;
     background-color: rgb(34,125,170);
-    animation: mail-in .5s .5s ease-in-out both;
+    animation: mail-in .5s ease-in-out both;
     display: none;
 }
 .mail-box::before {
@@ -1502,7 +1503,7 @@ a {
     height: 32px;
     background-color: #F56262;
     z-index: 2;
-    animation: flag-in .3s 1s ease-in-out both;
+    animation: flag-in .3s .5s ease-in-out both;
     transform-origin: 50% 100%;
 }
 .mail-box .mail-flag::before {
