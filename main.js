@@ -15,11 +15,10 @@ const skillList = document.querySelector('.skill-list');
 //SKILLSET中的技能条
 const percentages =  document.getElementsByClassName('skill-percentage');
 
-//CONTACT中的邮箱
-const mailBox = document.querySelector('.mail-box');
-//CONTACT中的email及github地址
-const emailAddress = document.querySelector('.email-address');
-const githubAddress = document.querySelector('.github-address');
+//WORKS中的向下箭头
+const moreBtn = document.querySelector('.work-rest');
+//WORKS中的作品列表
+const workList = document.querySelector('.work-list');
 
 //NOTES中的details按钮
 const detailBtns = document.getElementsByClassName('detail-btn');
@@ -32,6 +31,12 @@ const closeBtns = document.getElementsByClassName('close-btn');
 const blogList = document.querySelector('.collection-blog-list');
 //BLOGS中收藏列表每一项的blog-item-introduction
 const blogIntroductions = document.getElementsByClassName('blog-item-introduction');
+
+//CONTACT中的邮箱
+const mailBox = document.querySelector('.mail-box');
+//CONTACT中的email及github地址
+const emailAddress = document.querySelector('.email-address');
+const githubAddress = document.querySelector('.github-address');
 
 //设置变量
 //页面高度
@@ -51,6 +56,9 @@ let selecetedNav = 0;
 
 //标记是否滚动到过底部
 let hasReachBottom = false;
+
+//标记显示的work数目
+let worksOnShow = 6;
 
 
 //在滚动的时候控制滚动条的响应：1.伸缩 2.定位
@@ -124,7 +132,6 @@ for(let i = 0, len = navList.children.length; i < len; i++) {
 }
 
 
-
 //判断元素顶部是否进入可视区域
 function isElementTopInViewport(el) {
     var rect = el.getBoundingClientRect();
@@ -174,7 +181,20 @@ function handleOnBlockFadeIn() {
     }  
 }
 
-
+//在WORKS部分点击向下箭头呈现更多work
+moreBtn.addEventListener('click', () => {
+    //在没显示完之前每次多显示三个
+    if(worksOnShow + 3 <= workList.children.length) {
+        for(let i = 0; i < 3; i++) {
+            workList.children[worksOnShow].style.display = 'block';
+            worksOnShow++;
+        }
+        if(worksOnShow == workList.children.length) {
+            //全部显示之后不再显示按钮
+            moreBtn.style.display = 'none';
+        }
+    } 
+});
 
 //在NOTES部分点击Details按钮，则呈现笔记
 for(let i = 0, len = detailBtns.length; i < len; i++) {
