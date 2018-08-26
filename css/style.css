@@ -9,7 +9,7 @@
 .block {
     position: relative;
     width: 100%;
-    padding: 100px;
+    padding: 4rem;
     overflow: hidden;
     opacity: 0;
     transform: translateY(15px);
@@ -39,8 +39,8 @@
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 50px;
-    height: 4px;
+    width: 15%;
+    height: .15rem;
 }
 ul li {
     list-style: none;
@@ -48,7 +48,27 @@ ul li {
 a {
     text-decoration: none;
     cursor: pointer;
+    font-size: .6rem;
 }
+h1 {
+    font-size: 1rem;
+}
+h2 {
+    font-size: .9rem;
+}
+h3 {
+    font-size: .8rem;
+}
+h4 {
+    font-size: .7rem;
+}
+p {
+    font-size: .7rem;
+}
+span {
+    font-size: .7rem;
+}
+
 .cover {
     position: fixed;
     top: 0;
@@ -71,7 +91,7 @@ a {
     background-color: rgb(34, 125, 170);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, .2);
     line-height: 70px;
-    font-size: 20px;
+    font-size: .8rem;
     font-weight: bold;
     z-index: 9;
     color: #FFF;
@@ -83,9 +103,7 @@ a {
 }
 .nav .title {
     float: left;
-    width: 120px;
-    margin-left: 140px;
-    font-size: 25px;
+    margin-left: 5rem;
     cursor: pointer;
     position: relative;
     color: #FFF;
@@ -95,9 +113,9 @@ a {
     position: absolute;
     top: 10px;
     left: -10px;
-    height: 44px;
-    width: 140px;
-    border: 3px solid #FFF;
+    bottom: 10px;
+    right: -10px;
+    border: .12rem solid #FFF;
     transition: opacity .3s linear;
     opacity: 0;
 }
@@ -107,9 +125,9 @@ a {
 .nav-list {
     display: flex;
     float: right;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 65%;
+    width: 72%;
     text-align: center;
 }
 .nav-list li {
@@ -125,7 +143,7 @@ a {
     left: 100%;
     width: 0;
     height: 100%;
-    border-bottom: 3px solid #FFF;
+    border-bottom: .12rem solid #FFF;
     transition: all .2s .1s linear;
 }
 .nav-list li:hover::after {
@@ -142,22 +160,21 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    border-bottom: 3px solid #FFF;
+    border-bottom: .12rem solid #FFF;
 }
 /*** HEADER **/
 .header {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 25rem;
     color: #FFF;
     background: linear-gradient(to bottom, rgba(34,125,170,1) 0%, rgba(81,172,205,1) 100%);
-    padding: 100px;
+    padding: 4rem;
 }
 .introduction {
     position: absolute;
     left: 100px;
     top: 50%;
-    height: 120px;
     margin-top: -60px;
     color: #FFF;
     overflow: hidden;
@@ -166,7 +183,7 @@ a {
     transition: transform .5s .2s ease-out, opacity .5s ease-out;
 }
 .introduction .introduction-job {
-    font-size: 50px;
+    font-size: 2rem;
     font-weight: bold;
     position: relative;
     margin-bottom: 30px;
@@ -176,12 +193,9 @@ a {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 50px;
-    height: 4px;
+    width: 2rem;
+    height: .2rem;
     background-color: #FFF;
-}
-.introduction .introduction-description {
-    font-size: 16px;
 }
 
 /*** ABOUT ***/
@@ -261,7 +275,7 @@ a {
     display: inline-block;
     height: 70px;
     cursor: pointer;
-    padding-right: 100px;
+    padding-right: 3rem;
 }
 .skill-list li:not(:last-of-type) {
     margin-bottom: 10px;
@@ -473,7 +487,7 @@ a {
 .work-information {
     background: rgba(34,125,170,1);
     color: #FFF;
-    padding: 10px 15px;
+    padding: 10px 15px 0px 15px;
 }
 .work-name {
     display: block;
@@ -496,18 +510,23 @@ a {
 .work-technology-list {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
 }
 .work-technology-list li {
     flex: 0 1 auto;
-    margin-right: 10px;
     text-align: center;
-    padding: 5px 10px;
+    padding: 5px .5rem;
     height: 25px;
     line-height: 15px;
     font-size: 12px;
     background-color: #FFF;
     color: rgb(34, 125, 170);
     border-radius: 4px;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+}
+.work-technology-list li:not(:last-of-type) {
+    margin-right: .5rem;
 }
 .work-rest {
     display: block;
@@ -576,13 +595,14 @@ a {
     display: inline-block;
     width: 50%;
     margin: 10px 0;
+    padding: 0 3rem 0 0;
 }
 .note-description {
     position: relative;
-    left: 17.5%;
-    width: 65%;
-    height: 300px;
-    padding: 30px 30px 30px 19%;
+    left: 14%;
+    width: 80%;
+    height: 13rem;
+    padding: 1.5rem 1.5rem 1.5rem 18%;
     color: #FFF;
     border-radius: 4px;
     transition: all .5s linear;
@@ -603,15 +623,18 @@ a {
     color: #AAC7D9;
     font-size: 10px;
 }
+.note-description div {
+    height: 6rem;
+    overflow: hidden;
+}
 .note-description p {
-    margin: 8px 0;
+    margin: .3rem 0;
     font-size: 12px;
 }
 .note-description button {
     position: absolute;
-    bottom: 30px;
-    width: 70px;
-    height: 30px;
+    bottom: 1.5rem;
+    padding: .3rem;
     border: none;
     border-radius: 3px;
     background-color: #AAC7D9;
@@ -636,7 +659,7 @@ a {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 45%;
+    width: 50%;
     height: 65%;
     transform: translate(-50%, -50%);
     background-color: #FFF;
@@ -780,15 +803,16 @@ a {
     border-radius: 15px;
     transition: all 1s linear;
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
 }
 .collection-list > li::after {
     content: '';
     position: absolute;
     top: 0;
-    right: -38px;
-    width: 40px;
+    right: 0;
+    width: 2rem;
     height: 25%;
+    transform: translateX(80%);
     border-radius: 0 15px 15px 0;
     z-index: 1;
     cursor: pointer;
@@ -798,7 +822,7 @@ a {
 }
 .collection-list .collection-website {
     background-color: rgb(34,125,170);
-    width: 78%;
+    width: calc(78% - 2.8rem);
     border-top-right-radius: 0;
     z-index: 5;
 }
@@ -807,7 +831,7 @@ a {
 }
 .collection-list .collection-blog {
     background-color: rgb(57, 148, 187);
-    width: 82%;
+    width: calc(82% - 2.4rem);
     z-index: 4;
 }
 .collection-list .collection-blog::after {
@@ -816,7 +840,7 @@ a {
 }
 .collection-list .collection-book {
     background-color: rgb(81,172,205);
-    width: 86%;
+    width: calc(86% - 2rem);
     z-index: 3;
 }
 .collection-list .collection-book::after {
@@ -825,7 +849,7 @@ a {
 }
 .collection-list .collection-other {
     background-color: #AAC7D9;
-    width: 90%;
+    width: calc(90% - 1.6rem);
     border-bottom-right-radius: 0;
     z-index: 2;
 }
@@ -838,24 +862,29 @@ a {
     height: 100%;
     width: 100%;
 }
-.collection-content > p {
+.collection-content .collection-content-title {
+    height: 10%;
+}
+.collection-content-title > p {
     margin: 5px 0 10px 0;
 }
-.collection-content .collection-introduction {
-    font-size: 10px;
+.collection-content-title .collection-introduction {
+    font-size: 12px;
+    line-height: 12px;
 }
 /*** WEBSITES ***/
 .collection-content .collection-website-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    align-content: space-around;
+    height: 90%;
 }
 .collection-content .collection-website-list li {
     flex: 0 1 21%;
     border: 1px solid #FFF;
     border-radius: 5px;
-    margin: 2%;
     color: #58798C;
     padding: 10px;
     transition: all .1s linear;
@@ -868,7 +897,6 @@ a {
 .collection-content .collection-website-list li a {
     display: inline-block;
     font-weight: bold;
-    letter-spacing: 0;
     font-weight: bold;
     width: 100%;
     text-align: center;
@@ -877,7 +905,9 @@ a {
 .collection-content .collection-website-list li a span {
     display: inline-block;
     vertical-align: middle;
-    line-height: 32px;
+    font-size: .6rem;
+    line-height: .6rem;
+    letter-spacing: 0px;
 }
 .collection-content .collection-website-list li a i {
     display: inline-block;
@@ -930,7 +960,8 @@ a {
     margin: 5px auto;
 }
 .collection-content .collection-website-list li a p {
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 12px;
     font-weight: normal;
     letter-spacing: 0px;
 }
@@ -942,7 +973,7 @@ a {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
     border-radius: 15px;
     overflow: hidden;
-    margin: 40px 60px;
+    margin: .5rem 1.8rem;
 }
 .collection-blog-book::before {
     content: '';
@@ -1007,7 +1038,7 @@ a {
     height: 40px;
     line-height: 40px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 .5rem;
     text-align: start;
 }
 .collection-blog-list > li .blog-item  p {
@@ -1047,16 +1078,17 @@ a {
 /*** BOOKS ***/
 .collection-content .collection-book-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: 40px 0;
+    height: 90%;
+    align-content: space-around;
+    margin: 0 1.8rem;
 }
 .collection-book-list li {
-    flex: 0 1 25%;
+    flex: 0 1 21%;
     color: #FFF;
     text-align: center;
-    margin-bottom: 20px;
 }
 .collection-book-list li p {
     font-size: 10px;
@@ -1239,20 +1271,21 @@ a {
 .collection-content .collection-other-list {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: nowrap;
-    padding: 30px 60px;
+    align-content: space-around;
+    height: 90%;
+    margin: 0 1.8rem;
 }
 .collection-other-list > li {
     flex: 0 1;
     text-align: center;
-    margin: 0 50px;
 }
 .collection-other-list > li:first-of-type {
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 .collection-other-list > li:last-of-type {
-    flex-basis: 65%;
+    flex-basis: 55%;
 }
 .paper {
     position: relative;
@@ -1264,20 +1297,20 @@ a {
 .paper::before {
     content: '';
     position: absolute;
-    top: -15px;
-    left: -40px;
-    width: 80px;
-    height:30px;
+    top: -.75rem;
+    left: -1.25rem;
+    width: 2.5rem;
+    height:1.5rem;
     background-color: rgba(0, 0, 0, .1);
     transform: rotateZ(-30deg);
 }
 .paper::after {
     content: '';
     position: absolute;
-    top: -15px;
-    right: -40px;
-    width: 80px;
-    height:30px;
+    top: -.75rem;
+    right: -1.25rem;
+    width: 3rem;
+    height:1.5rem;
     background-color: rgba(0, 0, 0, .1);
     transform: rotateZ(30deg);
 }
@@ -1289,18 +1322,30 @@ a {
     padding: 10px;
 }
 /*** Public Account ***/
+.public-account-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: space-around;
+}
 .public-account-list li {
     position: relative;
-    flex: 0 1 45%;
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
+    flex: 0 1 50%;
+    text-align: center; 
+}
+.public-account-list li:not(:last-of-type) {
+    margin-bottom: .5rem;
 }
 .public-account-list li > i {
     display: block;
     width:50px;
     height: 50px;
     cursor: pointer;
+    margin: 0 auto;
+}
+.public-account-list li > p {
+    font-size: 12px;
 }
 .icon-infoq {
     background: url('../icons/icons-sprites.png') -150px -310px;
@@ -1455,9 +1500,9 @@ a {
     align-items: center;
 }
 .mail-box-bg {
-    flex: 0 1 150px;
+    flex: 0 1 6rem;
     position: relative;
-    height: 150px;
+    height: 6rem;
     background-color: #FFF;
     border-radius: 50%;
     overflow: hidden;
@@ -1466,11 +1511,11 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -40px;
-    margin-top: -20px;
-    width: 80px;
-    height: 40px;
-    border-radius: 15px 15px 0 0;
+    margin-top: -1rem;
+    margin-left: -1.5rem;
+    width: 3rem;
+    height: 2rem;
+    border-radius: .7rem .7rem 0 0;
     background-color: rgb(34,125,170);
     animation: mail-in .5s ease-in-out both;
     display: none;
@@ -1480,9 +1525,9 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px;
-    height: 100%;
-    border-radius: 15px 15px 0 0;
+    width: 1.2rem;
+    height: 2rem;
+    border-radius: .7rem .7rem 0 0;
     background-color: rgb(81,172,205);
 }
 .mail-box::after {
@@ -1491,16 +1536,16 @@ a {
     top: 100%;
     left: 50%;
     margin-left: -3px;
-    width: 6px;
-    height: 55px;
+    width: .3rem;
+    height: 2rem;
     background-color: rgb(34,125,170);
 }
 .mail-box .mail-flag {
     position: absolute;
-    bottom: 25px;
-    left: 45px;
-    width: 4px;
-    height: 32px;
+    bottom: 60%;
+    left: 60%;
+    width: .2rem;
+    height: 1.5rem;
     background-color: #F56262;
     z-index: 2;
     animation: flag-in .3s .5s ease-in-out both;
@@ -1510,20 +1555,20 @@ a {
     content: '';
     position: absolute;
     top: 95%;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    border: 4px solid #F56262;
-    margin-left: -6px;
+    margin-left: -.2rem;
+    width: .2rem;
+    height: .2rem;
+    border: .2rem solid #F56262;
+    
     border-radius: 50%;
 }
 .mail-box .mail-flag::after {
     content: '';
     position: absolute;
-    top: -6px;
-    left: 0;
-    width: 18px;
-    height: 12px;
+    left: 2px;
+    top: 0;
+    width: .7rem;
+    height: .5rem;
     background-color: #F56262;
 }
 .email-address, .github-address {
@@ -1533,9 +1578,11 @@ a {
     opacity: 0;
 }
 .email-address p, .github-address p {
-    font-size: 12px;
     color: #AAC7D9;
     margin-bottom: 5px;
+}
+.email-address h2, .github-address h2 {
+    font-size: 1rem;
 }
 .github-address a {
     color: #FFF;
@@ -1550,7 +1597,7 @@ a {
 }
 @keyframes mail-in {
     0% {
-        transform: translateY(125px);
+        transform: translateY(5rem);
         opacity: 0;
     }
     100% {
@@ -1579,4 +1626,101 @@ a {
 .fade-in {
     opacity: 1;
     transform: none;
+}
+
+
+/*** 媒体查询 ***/
+@media screen and (min-width:1600px) {
+	html {
+        font-size: 25px;
+    }
+}
+@media screen and (min-width:1500px) and (max-width:1600px) {
+	html {
+        font-size: 23px;
+    }
+}
+@media screen and (min-width:1400px) and (max-width:1500px) {
+	html {
+        font-size: 21px;
+    }
+}
+@media screen and (min-width:1300px) and (max-width:1400px) {
+	html {
+        font-size: 19px;
+    }
+    .nav {
+        height: 60px;
+        line-height: 60px;
+    }
+    .nav:hover {
+        height: 60px !important; /* 悬停一定是70px */
+    }
+}
+@media screen and (min-width:1200px) and (max-width:1300px) {
+	html {
+        font-size: 17px;
+    }
+    .nav {
+        height: 60px;
+        line-height: 60px;
+    }
+    .nav:hover {
+        height: 60px !important; /* 悬停一定是70px */
+    }
+}
+@media screen and (min-width:1100px) and (max-width:1200px) {
+	html {
+        font-size: 15px;
+    }
+    .nav {
+        height: 60px;
+        line-height: 60px;
+    }
+    .nav:hover {
+        height: 60px !important; /* 悬停一定是70px */
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1100px) {
+	html {
+        font-size: 13px;
+    }
+    .nav {
+        height: 60px;
+        line-height: 60px;
+    }
+    .nav:hover {
+        height: 60px !important; /* 悬停一定是70px */
+    }
+}
+@media screen and (min-width:900px) and (max-width:1000px) {
+	html {
+        font-size: 12px;
+    }
+    .nav {
+        height: 50px;
+        line-height: 50px;
+    }
+    .nav:hover {
+    height: 50px !important; /* 悬停一定是70px */
+}
+}
+@media screen and (max-width:900px) {
+	html {
+        font-size: 12px;
+    }
+    .nav {
+        height: 50px;
+        line-height: 50px;
+    }
+    .nav:hover {
+        height: 50px !important; /* 悬停一定是70px */
+    }
+    /** 小于900px后就不再同一行了 **/
+    .skill-list {
+        width: 100%;
+    }
+    .skill-introduction {
+        width: 100%;
+    }
 }

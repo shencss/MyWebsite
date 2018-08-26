@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SHENCSS</title>
     <link rel="stylesheet" href="css/style-min.css">
@@ -25,7 +25,7 @@
     <header class="header">
         <div class="introduction">
             <h1 class="introduction-job">FRONT-END DEVELOPER</h1>
-            <p class="introduction-description">前端即兴趣，兴趣即未来</p>
+            <p class="introduction-slogan">前端即兴趣，兴趣即未来</p>
         </div>
     </header>
     
@@ -466,10 +466,12 @@
                     <img class="note-img" src="" alt="css-icon" data-src="booksPic/css.jpg">
                     <h3>CSS Notes</h3>
                     <p>—— 个人积累的CSS笔记</p>
-                    <p>1.border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</p>
-                    <p>2.position：absolute会把元素变成块级元素，然后换行</p>
-                    <p>3.transform-style：preserve-3D会保留和呈现子元素的3D位置</p>
-                    <p>.......</p>
+                    <div>
+                        <p>1.border-box把border和padding都纳入总的大小之中（没有margin）IE盒子模型</p>
+                        <p>2.position：absolute会把元素变成块级元素，然后换行</p>
+                        <p>3.transform-style：preserve-3D会保留和呈现子元素的3D位置</p>
+                        <p>.......</p>
+                    </div>
                     <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
@@ -525,10 +527,12 @@
                     <img class="note-img" src="" alt="js-icon" data-src="booksPic/js.jpg">
                     <h3>JS Notes</h3>
                     <p>—— 个人积累的JS笔记</p>
-                    <p>1.if(arry)不能判断数组为空，必须用if(array === undefined || array.length == 0)</p>
-                    <p>2.Range.prototype = {}这样设置原型对象会失预定义的原型对象</p>
-                    <p>3.nextSibling、chlidNodes等DOM API容易取到空白的text节点</p>
-                    <p>.......</p>
+                    <div>
+                        <p>1.if(arry)不能判断数组为空，必须用if(array === undefined || array.length == 0)</p>
+                        <p>2.Range.prototype = {}这样设置原型对象会失预定义的原型对象</p>
+                        <p>3.nextSibling、chlidNodes等DOM API容易取到空白的text节点</p>
+                        <p>.......</p>
+                    </div>
                     <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
@@ -574,10 +578,12 @@
                     <img class="note-img" src="" alt="jq-icon" data-src="booksPic/jq.png">
                     <h3>JQuery Notes</h3>
                     <p>—— 个人积累的JQuery笔记</p>
-                    <p>1.JQ结构：入口模块+功能模块+底层支持模块</p>
-                    <p>2.JQ使用自调用函数避免JQ代码受其他代码干扰，以及破坏和污染全局变量</p>
-                    <p>3.$('#my-canvas')在JQ中拿不到canvas元素，要$('#my-canvas').get(0)</p>
-                    <p>.......</p>
+                    <div>
+                        <p>1.JQ结构：入口模块+功能模块+底层支持模块</p>
+                        <p>2.JQ使用自调用函数避免JQ代码受其他代码干扰，以及破坏和污染全局变量</p>
+                        <p>3.$('#my-canvas')在JQ中拿不到canvas元素，要$('#my-canvas').get(0)</p>
+                        <p>.......</p>
+                    </div>
                     <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
@@ -603,10 +609,12 @@
                     <img class="note-img" src="" alt="react-icon" data-src="booksPic/react.png">
                     <h3>React Notes</h3>
                     <p>—— 个人积累的React笔记</p>
-                    <p>1.this.setState：this.state通常是用来初始化state的，this.setstate是用来修改state值的</p>
-                    <p>2.JSX经过Babel编译+React.js构造变成JS对象，再经过ReactDom.render变成DOM元素</p>
-                    <p>3.用className代替标签中的class属性，用htmlFor代替label标签中的for属性</p>
-                    <p>.......</p>
+                    <div>
+                        <p>1.this.setState：this.state通常是用来初始化state的，this.setstate是用来修改state值的</p>
+                        <p>2.JSX经过Babel编译+React.js构造变成JS对象，再经过ReactDom.render变成DOM元素</p>
+                        <p>3.用className代替标签中的class属性，用htmlFor代替label标签中的for属性</p>
+                        <p>.......</p>
+                    </div>
                     <button class="detail-btn">Details</button>
                 </div>
                 <div class="note-details">
@@ -664,8 +672,10 @@
         <ul class="main collection-list">
             <li class="collection-other">
                <div class="collection-content">
-                    <h2>OTHERS</h2>
-                    <p class="collection-introduction">其他收藏</p>
+                   <div class="collection-content-title">
+                        <h2>OTHERS</h2>
+                        <p class="collection-introduction">其他收藏</p>
+                    </div>
                     <ul class="collection-other-list">
                         <li>
                             <div class="paper">
@@ -794,8 +804,10 @@
             </li>
             <li class="collection-book">
                 <div class="collection-content">
-                    <h2>BOOKS</h2>
-                    <p class="collection-introduction">书籍收藏</p>
+                    <div class="collection-content-title">
+                        <h2>BOOKS</h2>
+                        <p class="collection-introduction">图书收藏</p>
+                    </div>
                     <ul class="collection-book-list">
                         <li>
                             <div class='book'>
@@ -1034,8 +1046,10 @@
             </li>
             <li class="collection-blog">
                 <div class="collection-content">
-                    <h2>BLOGS</h2>
-                    <p class="collection-introduction">博客收藏</p>
+                    <div class="collection-content-title">
+                        <h2>BLOGS</h2>
+                        <p class="collection-introduction">博客收藏</p>
+                    </div>
                     <div class="collection-blog-book">
                         <ul class="collection-blog-list">
                             <li>
@@ -1149,8 +1163,10 @@
             </li>
             <li class="collection-website">
                 <div class="collection-content">
-                    <h2>WEBSITES</h2>
-                    <p class="collection-introduction">网站收藏</p>
+                    <div class="collection-content-title">
+                        <h2>WEBSITES</h2>
+                        <p class="collection-introduction">网站收藏</p>
+                    </div>
                     <ul class="collection-website-list">
                         <li>
                             <a href="https://github.com/" target="_blank">

@@ -51,7 +51,7 @@ let pageHeight = document.documentElement.scrollHeight || document.body.scrollHe
 //浏览器高度
 const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
 //导航条高度
-const navHeight = nav.offsetHeight;
+let navHeight = nav.offsetHeight;
 
 //上一次滚动到的高度
 let scrollHeightPre = 0;
@@ -70,11 +70,14 @@ const hasBlockInViewport = [false, false, false, false, false, false, false, fal
 //标记显示中的work数目
 let worksOnShow = 6;
 
+//标志当前是否显示导航条
+let showNav = true;
+
 
 //在滚动的时候控制滚动条的响应：1.伸缩 2.定位
 function handleOnNavReact() {
-    //showNav布尔值是为了减少DOM操作
-    let showNav = true;
+
+    showNav = true;
 
     //保存上次滚动到的高度
     scrollHeightPre = scrollHeightNow;
@@ -86,10 +89,12 @@ function handleOnNavReact() {
         //当前高度大于上次的高度
         if(scrollHeightNow > scrollHeightPre) {
             showNav = false;
-        }
-    } 
+        } 
+    }
+    
+    nav.style.height = showNav ? navHeight + 'px' : '5px';
 
-    nav.style.height = showNav ? '70px' : '5px';
+    
 
     for(let i = 0, len = navList.children.length; i < len; i++) {
         if(i < len - 1) {
@@ -116,7 +121,7 @@ function handleOnNavReact() {
 
 //鼠标进入导航条则删除nav-selected类，鼠标离开后再恢复
 navList.addEventListener('mouseover', () => {
-    navList.children[selecetedNav].classList.remove('nav-selected')
+    navList.children[selecetedNav].classList.remove('nav-selected');
 });
 navList.addEventListener('mouseleave', () => {
     navList.children[selecetedNav].classList.add('nav-selected');   
@@ -278,6 +283,25 @@ for(let i = 0, len = blogList.children.length; i < len; i++) {
     }, false);
 }
 
+//改变窗口宽度时，相应调整导航条高度
+function handleOnResize() {
+    const clientWidth = document.documentElement.clientWidth  || document.body.clientWidth;
+
+    if(clientWidth > 1400) {
+        navHeight = 70;
+    }else if (clientWidth < 1400 && clientWidth >1000) {
+        navHeight = 60;
+    } else if(clientWidth < 1000) {
+        navHeight = 50;
+    }
+    //如果当前正显示着导航条，则立即改变高度
+    if(showNav) {
+        nav.style.height = navHeight + 'px';
+    }
+}
+
+//监听resize事件
+window.addEventListener('resize', handleOnResize);
 
 //监听load和scroll事件
 window.addEventListener('load', handleOnNavReact);
